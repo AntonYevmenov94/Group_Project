@@ -11,8 +11,8 @@ namespace Group_Project
     {
         public JobSekeerContext() : base("job")
         {
-          // Database.SetInitializer(new MyInitializer());
-           Database.SetInitializer(new DropCreateDatabaseAlways<JobSekeerContext>());
+           Database.SetInitializer(new MyInitializer());
+          //Database.SetInitializer(new DropCreateDatabaseAlways<JobSekeerContext>());
 
         }
 
@@ -22,7 +22,7 @@ namespace Group_Project
         public DbSet<Email> Emails { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Log> Log { get; set; }
-        public DbSet<People> People { get; set; }
+        public DbSet<Person> Persons { get; set; }
         public DbSet<Phone> Phones { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<Response> Responses { get; set; }
@@ -43,9 +43,9 @@ namespace Group_Project
         {
             protected override void Seed(JobSekeerContext context)
             {
-                Roles roles1 = new Roles() { Title = "Director" };
-                Roles roles2 = new Roles() { Title = "HR" };
-                Roles roles3 = new Roles() { Title = "MUP" };
+                Roles roles1 = new Roles() {  Id=1 ,Title = "Director" };
+                Roles roles2 = new Roles() { Id=2, Title = "HR" };
+                Roles roles3 = new Roles() { Id=3, Title = "MUP" };
                 context.Roles.AddRange(new[] { roles1, roles2, roles3 });
                 context.SaveChanges();
             }

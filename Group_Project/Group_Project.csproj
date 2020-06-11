@@ -69,7 +69,7 @@
     <Compile Include="ModelEntityClasses\Employee.cs" />
     <Compile Include="EntityContext\JobSekeerContext.cs" />
     <Compile Include="ModelEntityClasses\Log.cs" />
-    <Compile Include="ModelEntityClasses\People.cs" />
+    <Compile Include="ModelEntityClasses\Person.cs" />
     <Compile Include="ModelEntityClasses\Phone.cs" />
     <Compile Include="ModelEntityClasses\Position.cs" />
     <Compile Include="ModelEntityClasses\Response.cs" />

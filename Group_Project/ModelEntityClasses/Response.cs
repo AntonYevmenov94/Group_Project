@@ -17,7 +17,7 @@ namespace Group_Project
         public virtual Vacancy Vacancy { get; set; }
         public int PeopleId { get; set; }
         [ForeignKey(nameof(PeopleId))]
-        public virtual People People { get; set; }
+        public virtual Person Person { get; set; }
 
     }
 }

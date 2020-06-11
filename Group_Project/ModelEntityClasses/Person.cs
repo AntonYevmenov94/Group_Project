@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Group_Project
 {
-    [Table("People")]
-    public class People
+    [Table("Persons")]
+    public class Person
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -32,7 +32,7 @@ namespace Group_Project
         public virtual ICollection<Technology> Technologies { get; set; }
         public virtual ICollection<Log> Logs { get; set; }
 
-        public People()
+        public Person()
         {
             SocialMediaLinks = new HashSet<SocialMediaLink>();
             Technologies = new HashSet<Technology>();
