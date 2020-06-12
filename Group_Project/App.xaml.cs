@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,23 @@ namespace Group_Project
     /// </summary>
     public partial class App : Application
     {
+        private static IContainer IoCContainer;
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            // регистрация компонентов в IoC контейнере
+            var builder = new ContainerBuilder();
+
+            // view
+            builder.RegisterType<MainWindow>();
+
+            IoCContainer = builder.Build();
+            
+            // резолвить и запустить основное окно приложения
+            var appWindow = IoCContainer.Resolve<MainWindow>();
+            appWindow.Show();
+        }
     }
 }
