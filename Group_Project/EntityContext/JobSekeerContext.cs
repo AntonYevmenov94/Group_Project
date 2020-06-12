@@ -11,7 +11,7 @@ namespace Group_Project
     {
         public JobSekeerContext() : base("job")
         {
-           Database.SetInitializer(new MyInitializer());
+           //Database.SetInitializer(new MyInitializer());
           //Database.SetInitializer(new DropCreateDatabaseAlways<JobSekeerContext>());
 
         }

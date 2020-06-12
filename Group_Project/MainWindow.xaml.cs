@@ -33,5 +33,11 @@ namespace Group_Project
             db.Roles.Load();
             
         }
+
+        private void bt1_Click(object sender, RoutedEventArgs e)
+        {
+            WindowPositions pform = new WindowPositions();
+            pform.Show();
+        }
     }
 }

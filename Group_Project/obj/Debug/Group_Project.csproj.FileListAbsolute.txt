@@ -16,3 +16,13 @@ f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\Group_Project.cspro
 f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\Group_Project.csproj.CopyComplete
 f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\Group_Project.exe
 f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\Group_Project.pdb
+f:\CommandProjectGroup\Group_Project\Group_Project\bin\Debug\MaterialDesignColors.dll
+f:\CommandProjectGroup\Group_Project\Group_Project\bin\Debug\MaterialDesignThemes.Wpf.dll
+f:\CommandProjectGroup\Group_Project\Group_Project\bin\Debug\MaterialDesignColors.pdb
+f:\CommandProjectGroup\Group_Project\Group_Project\bin\Debug\MaterialDesignThemes.Wpf.pdb
+f:\CommandProjectGroup\Group_Project\Group_Project\bin\Debug\MaterialDesignThemes.Wpf.xml
+f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\App.baml
+f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowPositions.g.cs
+f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowADDPosition.g.cs
+f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowPositions.baml
+f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowADDPosition.baml
