@@ -94,6 +94,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="WindowADDPosition.xaml.cs">
+      <DependentUpon>WindowADDPosition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowPositions.xaml.cs">
+      <DependentUpon>WindowPositions.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -102,12 +108,38 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EntityContext\JobSeekerContext.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WindowADDPosition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowPositions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelEntityClasses\Comment.cs" />
+    <Compile Include="ModelEntityClasses\Department.cs" />
+    <Compile Include="ModelEntityClasses\Discipline.cs" />
+    <Compile Include="ModelEntityClasses\Email.cs" />
+    <Compile Include="ModelEntityClasses\Employee.cs" />
+    <Compile Include="ModelEntityClasses\Log.cs" />
+    <Compile Include="ModelEntityClasses\Person.cs" />
+    <Compile Include="ModelEntityClasses\Phone.cs" />
+    <Compile Include="ModelEntityClasses\Position.cs" />
+    <Compile Include="ModelEntityClasses\Response.cs" />
+    <Compile Include="ModelEntityClasses\Role.cs" />
+    <Compile Include="ModelEntityClasses\Sex.cs" />
+    <Compile Include="ModelEntityClasses\SocialMediaLink.cs" />
+    <Compile Include="ModelEntityClasses\Status.cs" />
+    <Compile Include="ModelEntityClasses\Technology.cs" />
+    <Compile Include="ModelEntityClasses\User.cs" />
+    <Compile Include="ModelEntityClasses\Vacancy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

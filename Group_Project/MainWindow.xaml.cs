@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,23 @@ namespace Group_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+        JobSekeerContext db = new JobSekeerContext();
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            db.Roles.Load();
+
+        }
+
+        private void bt1_Click(object sender, RoutedEventArgs e)
+        {
+            WindowPositions pform = new WindowPositions();
+            pform.Show();
         }
     }
 }
