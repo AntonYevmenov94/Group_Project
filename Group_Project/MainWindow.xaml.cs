@@ -28,10 +28,10 @@ namespace Group_Project
             Loaded += MainWindow_Loaded;
         }
 
+        // TODO Удалить. Загрузка информации из БД должна производиться в ViewModel'ях
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            db.Roles.Load();
-
+            //db.Roles.Load();
         }
 
         private void bt1_Click(object sender, RoutedEventArgs e)
