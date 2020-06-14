@@ -26,7 +26,7 @@ namespace Group_Project
         public DbSet<Phone> Phones { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<Response> Responses { get; set; }
-        public DbSet<Roles> Roles { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<Sex> Sex { get; set; }
         public DbSet<SocialMediaLink> SocialMediaLinks { get; set; }
         public DbSet<Status> Statuses { get; set; }
@@ -43,9 +43,9 @@ namespace Group_Project
         {
             protected override void Seed(JobSekeerContext context)
             {
-                Roles roles1 = new Roles() { Id = 1, Title = "Director" };
-                Roles roles2 = new Roles() { Id = 2, Title = "HR" };
-                Roles roles3 = new Roles() { Id = 3, Title = "MUP" };
+                Role roles1 = new Role() { Id = 1, Title = "Director" };
+                Role roles2 = new Role() { Id = 2, Title = "HR" };
+                Role roles3 = new Role() { Id = 3, Title = "MUP" };
                 context.Roles.AddRange(new[] { roles1, roles2, roles3 });
                 context.SaveChanges();
             }
