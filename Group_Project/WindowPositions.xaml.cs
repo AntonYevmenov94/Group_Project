@@ -24,6 +24,7 @@ namespace Group_Project
             InitializeComponent();
         }
 
+        // TODO Удалить. За эти действия должна отвечать ViewModel
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WindowADDPosition addForm = new WindowADDPosition();
