@@ -13,8 +13,8 @@ namespace Group_Project
         public int Id { get; set; }
         public string Text { get; set; }
 
-        public int PeopleId { get; set; }
-        [ForeignKey(nameof(PeopleId))]
+        public int PersonId { get; set; }
+        [ForeignKey(nameof(PersonId))]
         public virtual Person Person { get; set; }
 
         public int UserId { get; set; }

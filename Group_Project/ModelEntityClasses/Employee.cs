@@ -14,8 +14,8 @@ namespace Group_Project
         public decimal Salary { get; set; }
         public DateTime EmploymentDate { get; set; }
 
-        public int PeopleId { get; set; }
-        [ForeignKey(nameof(PeopleId))]
+        public int PersonId { get; set; }
+        [ForeignKey(nameof(PersonId))]
         public virtual Person Person { get; set; }
 
         public int PositionId { get; set; }

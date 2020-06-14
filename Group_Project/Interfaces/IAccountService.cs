@@ -16,6 +16,7 @@ namespace Group_Project
     }
 
     public enum AccountRights {
+        NonAuthenticated,
         Admin,
         Director,
         HR,
