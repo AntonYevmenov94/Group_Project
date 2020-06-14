@@ -16,7 +16,7 @@ namespace Group_Project
         public string Email { get; set; }
         public int RolesId { get; set; }
         [ForeignKey(nameof(RolesId))]
-        public virtual Roles Role { get; set; }
+        public virtual Role Role { get; set; }
 
     }
 }
