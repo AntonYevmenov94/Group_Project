@@ -18,11 +18,11 @@ namespace Group_Project
 
         public int UserId { get; set; }
         [ForeignKey(nameof(UserId))]
-        public virtual User Users { get; set; }
+        public virtual User User { get; set; }
 
 
-        public int PeopleId { get; set; }
-        [ForeignKey(nameof(PeopleId))]
+        public int PersonId { get; set; }
+        [ForeignKey(nameof(PersonId))]
 
         public virtual Person Person { get; set; }
     }

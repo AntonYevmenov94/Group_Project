@@ -98,6 +98,15 @@
     <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />
     <Compile Include="VakueConverters\NullToBoolConverter.cs" />
+    <Compile Include="Helpers\BaseDialogViewModel.cs" />
+    <Compile Include="Helpers\BaseViewModel.cs" />
+    <Compile Include="Interfaces\IDbContextProvider.cs" />
+    <Compile Include="Interfaces\IDialogService.cs" />
+    <Compile Include="Interfaces\ILogger.cs" />
+    <Compile Include="Interfaces\IAccountService.cs" />
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\Logger.cs" />
+    <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="WindowADDPosition.xaml.cs">
       <DependentUpon>WindowADDPosition.xaml</DependentUpon>
     </Compile>
