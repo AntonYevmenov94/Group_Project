@@ -21,7 +21,7 @@ namespace Group_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        JobSekeerContext db = new JobSekeerContext();
+        JobSeekerDbContext db = new JobSeekerDbContext();
         public MainWindow()
         {
             InitializeComponent();
