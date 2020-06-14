@@ -18,7 +18,12 @@ namespace Group_Project.Services
 
         public void LogAction(string logMessage, Person subject = null)
         {
-            Group_Project.Log log;
+            Log log = new Log() {
+                Message = logMessage,
+                User = accountService.LoggedUser,
+                Person = subject,
+                Time = DateTime.Now
+            };
         }
     }
 }
