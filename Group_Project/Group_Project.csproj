@@ -94,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\ValueConverterMarkupBase.cs" />
+    <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
+    <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />
+    <Compile Include="VakueConverters\NullToBoolConverter.cs" />
     <Compile Include="Helpers\BaseDialogViewModel.cs" />
     <Compile Include="Helpers\BaseViewModel.cs" />
     <Compile Include="Interfaces\IDbContextProvider.cs" />
