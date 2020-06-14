@@ -94,6 +94,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\ValueConverterMarkupBase.cs" />
+    <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
+    <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />
+    <Compile Include="VakueConverters\NullToBoolConverter.cs" />
     <Compile Include="WindowADDPosition.xaml.cs">
       <DependentUpon>WindowADDPosition.xaml</DependentUpon>
     </Compile>
@@ -169,6 +173,7 @@
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
