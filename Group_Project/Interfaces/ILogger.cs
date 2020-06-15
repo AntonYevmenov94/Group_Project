@@ -11,6 +11,11 @@ namespace Group_Project
     /// </summary>
     public interface ILogger
     {
+        /// <summary>
+        /// Создать новую запись в таблице БД Log.
+        /// </summary>
+        /// <param name="logMessage">Текстовое сообщение.</param>
+        /// <param name="subject">Субъект, над которым было произведено логируемое дейтсвие.</param>
         void LogAction(string logMessage, Person subject = null);
     }
 }

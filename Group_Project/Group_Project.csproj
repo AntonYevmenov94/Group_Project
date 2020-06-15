@@ -103,8 +103,8 @@
     <Compile Include="Interfaces\IDbContextProvider.cs" />
     <Compile Include="Interfaces\IDialogService.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
-    <Compile Include="Interfaces\IAccountService.cs" />
-    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Interfaces\IAuthService.cs" />
+    <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="WindowADDPosition.xaml.cs">

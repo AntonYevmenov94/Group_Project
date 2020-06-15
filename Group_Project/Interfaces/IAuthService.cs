@@ -9,7 +9,7 @@ namespace Group_Project
     /// <summary>
     /// Обеспечивает доступ к текущему пользователю и его роли.
     /// </summary>
-    public interface IAccountService
+    public interface IAuthService
     {
         User LoggedUser { get; set; }
         AccountRights AccountRights { get; }
