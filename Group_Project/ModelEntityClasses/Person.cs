@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Group_Project
 {
-    [Table("Persons")]
+    [Table("People")]
     public class Person
     {
         public int Id { get; set; }

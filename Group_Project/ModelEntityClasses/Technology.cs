@@ -14,12 +14,12 @@ namespace Group_Project
 
         public string Title { get; set; }
 
-        public virtual ICollection<Person> Person { get; set; }
+        public virtual ICollection<Person> People { get; set; }
         public virtual ICollection<Discipline> Disciplines { get; set; }
 
         public Technology()
         {
-            Person = new HashSet<Person>();
+            People = new HashSet<Person>();
             Disciplines = new HashSet<Discipline>();
         }
 

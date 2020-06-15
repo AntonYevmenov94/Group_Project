@@ -9,9 +9,9 @@ namespace Group_Project.Services
 {
     class Logger : ILogger
     {
-        private IAccountService accountService;
+        private IAuthService accountService;
         
-        public Logger(IAccountService accountService)
+        public Logger(IAuthService accountService)
         {
             this.accountService = accountService;
         }

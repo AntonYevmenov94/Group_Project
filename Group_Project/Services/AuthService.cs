@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group_Project.Services
 {
-    class AccountService : IAccountService
+    class AuthService : IAuthService
     {
         private User loggedUser;
 
