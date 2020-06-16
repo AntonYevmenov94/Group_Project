@@ -138,11 +138,6 @@ namespace Group_Project.DateTimeMultiValueConverter
         #endregion
     }
 
-
-    //public string this[string columnName] => throw new NotImplementedException();
-
-    //public string Error => throw new NotImplementedException();
-
-    //public event PropertyChangedEventHandler PropertyChanged;
+      
     
 }

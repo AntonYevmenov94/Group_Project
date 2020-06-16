@@ -5,6 +5,13 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group_Project", "Group_Project.csproj", "{F0A52E0E-D50E-4E24-B4FA-5691D2AD215C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Icons", "Icons", "{2090A546-A3A5-4A07-86FD-2081F124A88B}"
+	ProjectSection(SolutionItems) = preProject
+		Icon\del.ico = Icon\del.ico
+		Icon\delete.ico = Icon\delete.ico
+		Icon\edit.ico = Icon\edit.ico
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

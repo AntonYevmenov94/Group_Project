@@ -1,0 +1,81 @@
+﻿<Window x:Class="Group_Project.WindowADDVacancy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Group_Project"
+        mc:Ignorable="d"
+        Title="Вакансия" Height="900" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Открыта:" Margin="10" FontSize="14"/>
+            <TextBlock Grid.Column="1" Text="Время" Margin="15" FontSize="14"/>
+            <Label Grid.Row="1" Content="Закрыта:" Margin="10" FontSize="14"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Время" Margin="15" FontSize="14"/>
+            <Button x:Name="btArchive" Grid.Column="3" Grid.Row="1" Margin="5" Background="#FF0057D8" Content="Архив" FontSize="14"/>
+        </Grid>
+        <TextBlock Grid.Row="1" Margin="10" Width="500" HorizontalAlignment="Left" Text="Название вакансии" FontSize="20"/>
+        <TextBox Text="Описание" Grid.Row="2" Margin="10" Width="750" FontSize="16" HorizontalAlignment="Left" BorderBrush="#FF0057D8" BorderThickness="1"/>
+        <Label Grid.Row="3" Content="Предметы" FontSize="16" Margin="5"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <ComboBox Width="400" Height="35" HorizontalAlignment="Left" Margin="5" BorderBrush="#FF0057D8" BorderThickness="2">
+                <ComboBoxItem>
+
+                </ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="btAddSubject" Width="120" Margin="10" Content="Добавить" FontSize="14" Background="#FF0057D8"/>
+        </StackPanel>
+        <ListBox x:Name="lbSubjects" Grid.Row="4" BorderBrush="#FF0057D8" BorderThickness="2" Margin="10">
+            <ListBoxItem Margin="5">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Предмет1" Margin="5" FontSize="16"/>
+                    <Button x:Name="btdel1" Width="10" Height="10" Margin="10" Background="#FF0057D8" VerticalAlignment="Top">
+                        <Image Source="Icon\delete.ico"  Stretch="Fill"/>
+                    </Button>
+                    <TextBlock Text="Предмет2" Margin="5" FontSize="16"/>
+                    <Button x:Name="btdel2" Width="10" Height="10" Margin="10" Background="#FF0057D8" VerticalAlignment="Top"/>
+
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+        <ListBox x:Name="lbTeсhnology" Grid.Row="5" BorderBrush="#FF0057D8" BorderThickness="2" Margin="10">
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Технология1" FontSize="16" Margin="10"/>
+                    <TextBlock Text="Технология2" FontSize="16" Margin="10"/>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+        <Button x:Name="btReestablish" Grid.Row="6" Content="Восстановить" Width="130" Height="40" FontSize="14" Background="#FF0057D8" HorizontalAlignment="Right" Margin="10"/>
+        <Grid Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Margin="5" Width="200" HorizontalAlignment="Right">
+                <Button x:Name="btFeedback" Content="N откликов" Foreground="Black" FontSize="16" Margin="5" Background="#33FF99" Height="40"/>
+                <Button x:Name="btCreateFeedback" Content="Создать отклик" Margin="5" Background="#33FF99" Foreground="Black" FontSize="16" Height="40"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -26,4 +26,9 @@ f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowPositions.g.c
 f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowADDPosition.g.cs
 f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowPositions.baml
 f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowADDPosition.baml
-f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\Group_Project.csprojAssemblyReference.cache
+F:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowADDUser.g.cs
+F:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowADDUser.baml
+F:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowAccountsUser.g.cs
+F:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowAccountsUser.baml
+F:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowADDVacancy.g.cs
+F:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\WindowADDVacancy.baml

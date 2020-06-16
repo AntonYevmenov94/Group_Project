@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-f:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\
+F:\CommandProjectGroup\Group_Project\Group_Project\obj\Debug\
 Group_Project
 none
 false
 DEBUG;TRACE
-f:\CommandProjectGroup\Group_Project\Group_Project\App.xaml
-3-175135018
+F:\CommandProjectGroup\Group_Project\Group_Project\App.xaml
+6-2095020611
 
-26-2100849292
-18-442291074
-MainWindow.xaml;WindowPositions.xaml;WindowADDPosition.xaml;
+29225289610
+18-1700173074
+MainWindow.xaml;WindowAccountsUser.xaml;WindowADDUser.xaml;WindowADDVacancy.xaml;WindowPositions.xaml;WindowADDPosition.xaml;
 
 False
 

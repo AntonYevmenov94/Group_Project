@@ -5,40 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Group_Project"
         mc:Ignorable="d"
-        Title="WindowADDPosition" Height="400" Width="500">
+        Title="WindowADDPosition" Height="400" Width="550">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
          <StackPanel Margin="5" Orientation="Vertical" Grid.Row="0">
             <Label Content="Отдел" FontSize="16"/>
-            <ComboBox x:Name="cbNamePos" Width="400" HorizontalAlignment="Left" Margin="5" Style="{StaticResource MaterialDesignComboBox}">
-                
-                <ComboBoxItem IsSelected="True" Content="MAK"/>
-                <ComboBoxItem IsSelected="True" Content="2"/>
-                <ComboBoxItem IsSelected="True" Content="3"/>
-            </ComboBox>
+            <ComboBox x:Name="cbNamePos" Width="400" HorizontalAlignment="Left" Margin="5" BorderBrush="#FF0057D8" BorderThickness="2"/>
+
+            <!--<ComboBoxItem IsSelected="True" Content="MAK"/>
+            <ComboBoxItem IsSelected="True" Content="2"/>
+            <ComboBoxItem IsSelected="True" Content="3"/>-->
+
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical">
             <Label Content="Названия должности" FontSize="16"/>
-            <TextBlock x:Name="tbInputNamePos" Margin="5" Width="400" HorizontalAlignment="Left" Height="25"/>
+            <TextBox x:Name="tbInputNamePos" Margin="5" Width="400" HorizontalAlignment="Left" Height="25" BorderBrush="#FF0057D8" BorderThickness="2"/>
         </StackPanel>
        
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-            <DockPanel Grid.Row="3" Margin="10" Width="100" HorizontalAlignment="Right">
-                <Button x:Name="btSave" Grid.Column="0" Content="Сохранить"/>
-            </DockPanel>
-            <DockPanel Grid.Row="3" Margin="10" Grid.Column="1" Width="100" HorizontalAlignment="Left" >
-                <Button Content="Отмена" />
-               
-            </DockPanel>
-        </Grid>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+                <Button x:Name="btSave" Grid.Column="1"  Content="Сохранить" Width="105" Background="#FF0057D8" Margin="5" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button x:Name="btCacel"  Grid.Column="3" Content="Отмена" Width="105" Background="#FF0057D8" Margin="5"/>
+            </Grid>
             
     </Grid>
 </Window>

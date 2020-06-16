@@ -87,6 +87,9 @@
     <Compile Include="ModelEntityClasses\Technology.cs" />
     <Compile Include="ModelEntityClasses\User.cs" />
     <Compile Include="ModelEntityClasses\Vacancy.cs" />
+    <Compile Include="WindowAccountsUser.xaml.cs">
+      <DependentUpon>WindowAccountsUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowADDPosition.xaml.cs">
       <DependentUpon>WindowADDPosition.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WindowAccountsUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowADDUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowADDVacancy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowPositions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +130,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WindowADDUser.xaml.cs">
+      <DependentUpon>WindowADDUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowADDVacancy.xaml.cs">
+      <DependentUpon>WindowADDVacancy.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowPositions.xaml.cs">
       <DependentUpon>WindowPositions.xaml</DependentUpon>
     </Compile>
