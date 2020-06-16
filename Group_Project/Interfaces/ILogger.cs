@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Group_Project
 {
+    // логгер отделяется от сервиса для создания сообщений лога, чтобы
+    // было легче менять логгер
+
     /// <summary>
-    /// Сервис для создания сообщений лога действий.
+    /// Сервис для логирования действий.
     /// </summary>
     public interface ILogger
     {
