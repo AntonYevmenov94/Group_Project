@@ -96,6 +96,7 @@
     </ApplicationDefinition>
     <Compile Include="Helpers\ValueConverterMarkupBase.cs" />
     <Compile Include="Interfaces\ILogMessageBuilder.cs" />
+    <Compile Include="Services\DbContextProvider.cs" />
     <Compile Include="Services\LogMessageBuilder.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />

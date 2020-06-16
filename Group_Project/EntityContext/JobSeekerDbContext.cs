@@ -9,7 +9,7 @@ namespace Group_Project
 {
     public class JobSeekerDbContext : DbContext
     {
-        public JobSeekerDbContext() : base("job")
+        public JobSeekerDbContext(string connectionString) : base(connectionString)
         {
             // ДОЛЖЕН СРАБАТЫВАТЬ ТОЛЬКО ОДИН ИНИЦИАЛИЗАТОР
 
