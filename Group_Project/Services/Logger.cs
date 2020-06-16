@@ -9,11 +9,15 @@ namespace Group_Project.Services
 {
     class Logger : ILogger
     {
-        private IAuthService accountService;
+        private readonly IAuthService accountService;
+        private readonly IDbContextProvider dbContextProvider;
         
-        public Logger(IAuthService accountService)
+        public Logger(
+            IAuthService accountService,
+            IDbContextProvider dbContextProvider)
         {
             this.accountService = accountService;
+            this.dbContextProvider = dbContextProvider;
         }
 
         public void LogAction(string logMessage, Person subject = null)
@@ -24,6 +28,9 @@ namespace Group_Project.Services
                 Person = subject,
                 Time = DateTime.Now
             };
+
+            dbContextProvider.GetDbContext().Log.Add(log);
+            dbContextProvider.GetDbContext().SaveChanges();
         }
     }
 }

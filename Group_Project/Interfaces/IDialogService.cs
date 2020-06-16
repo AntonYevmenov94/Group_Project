@@ -23,7 +23,8 @@ namespace Group_Project
         /// </summary>
         /// <param name="onConfirm">Действие, которое должно быть выполнено, если пользователь нажмет Save/Ok/Confirm</param>
         /// <param name="onDismiss">Действие, которое должно быть выполнено, если пользователь нажмет No/Cancel/Отмена</param>
-        void ShowModal(BaseViewModel dialogVm, Action onConfirm, Action onDismiss);
+        /// <returns>Результат диалога.</returns>
+        bool? ShowModal(BaseViewModel dialogVm, Action onConfirm, Action onDismiss);
 
 
 
@@ -33,15 +34,13 @@ namespace Group_Project
         /// <summary>
         /// Показать диалог сохранения файла.
         /// </summary>
-        /// <param name="onConfirm">Действие, которое должно быть выполнено, если пользователь нажмет Save/Ok/Confirm</param>
-        /// <param name="onDismiss">Действие, которое должно быть выполнено, если пользователь нажмет No/Cancel/Отмена</param>
-        void SaveFileDialog(Action onConfirm = null, Action onDismiss = null);
+        /// <returns>Путь к файлу.</returns>
+        string SaveFileDialog();
 
         /// <summary>
         /// Показать диалог открытия файла.
         /// </summary>
-        /// <param name="onConfirm">Действие, которое должно быть выполнено, если пользователь нажмет Save/Ok/Confirm</param>
-        /// <param name="onDismiss">Действие, которое должно быть выполнено, если пользователь нажмет No/Cancel/Отмена</param>
-        void OpenFileDialog(Action onConfirm = null, Action onDismiss = null);
+        /// <returns>Путь к файлу.</returns>
+        string OpenFileDialog();
     }
 }
