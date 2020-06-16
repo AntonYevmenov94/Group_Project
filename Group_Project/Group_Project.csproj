@@ -95,6 +95,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\ValueConverterMarkupBase.cs" />
+    <Compile Include="ResponseWindow.xaml.cs">
+      <DependentUpon>ResponseWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />
     <Compile Include="VakueConverters\NullToBoolConverter.cs" />
@@ -126,6 +129,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ResponseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowADDPosition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

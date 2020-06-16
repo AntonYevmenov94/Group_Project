@@ -31,6 +31,7 @@ namespace Group_Project
             // резолвить и запустить основное окно приложения
             var appWindow = IoCContainer.Resolve<MainWindow>();
             appWindow.Show();
+
         }
     }
 }
