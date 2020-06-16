@@ -9,7 +9,7 @@ namespace Group_Project
     /// <summary>
     /// Базовый класс для ViewModel'ей диалоговых окон.
     /// </summary>
-    class BaseDialogViewModel : BaseViewModel
+    public class BaseDialogViewModel : BaseViewModel
     {
         #region Public properties
 

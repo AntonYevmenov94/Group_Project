@@ -12,11 +12,18 @@ namespace Group_Project
     public interface IDialogService
     {
         /// <summary>
+        /// Зарегестрировать отношение модели-представления к окну.
+        /// </summary>
+        /// <param name="viewModel">Тип модели-представления</param>
+        /// <param name="window">Тип окна</param>
+        void Register(Type viewModel, Type window);
+        
+        /// <summary>
         /// Открыть окно.
         /// </summary>
         /// <param name="onConfirm">Действие, которое должно быть выполнено, если пользователь нажмет Save/Ok/Confirm</param>
         /// <param name="onDismiss">Действие, которое должно быть выполнено, если пользователь нажмет No/Cancel/Отмена</param>
-        void Show(BaseViewModel dialogVm, Action onConfirm, Action onDismiss);
+        void Show(BaseDialogViewModel dialogVm, Action onConfirm = null, Action onDismiss = null);
 
         /// <summary>
         /// Открыть модальное окно.
@@ -24,7 +31,7 @@ namespace Group_Project
         /// <param name="onConfirm">Действие, которое должно быть выполнено, если пользователь нажмет Save/Ok/Confirm</param>
         /// <param name="onDismiss">Действие, которое должно быть выполнено, если пользователь нажмет No/Cancel/Отмена</param>
         /// <returns>Результат диалога.</returns>
-        bool? ShowModal(BaseViewModel dialogVm, Action onConfirm, Action onDismiss);
+        bool? ShowModal(BaseDialogViewModel dialogVm, Action onConfirm = null, Action onDismiss = null);
 
 
 
