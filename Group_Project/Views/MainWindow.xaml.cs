@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Group_Project
+namespace Group_Project.Views
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml

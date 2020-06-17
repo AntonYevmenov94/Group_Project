@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Group_Project
+namespace Group_Project.Views
 {
     /// <summary>
-    /// Логика взаимодействия для ResponseWindow.xaml
+    /// Interaction logic for WindowADDPosition.xaml
     /// </summary>
-    public partial class ResponseWindow : Window
+    public partial class WindowADDPosition : Window
     {
-        public ResponseWindow()
+        public WindowADDPosition()
         {
             InitializeComponent();
         }

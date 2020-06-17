@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Group_Project
+namespace Group_Project.Views
 {
     /// <summary>
     /// Логика взаимодействия для Positions.xaml

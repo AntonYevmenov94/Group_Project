@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group_Project.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Group_Project
+namespace Group_Project.Views
 {
     /// <summary>
-    /// Interaction logic for WindowADDPosition.xaml
+    /// Логика взаимодействия для ResponseWindow.xaml
     /// </summary>
-    public partial class WindowADDPosition : Window
+    public partial class ResponseWindow : Window
     {
-        public WindowADDPosition()
+        public ResponseWindow()
         {
             InitializeComponent();
+            DataContext = new ResponseViewModel();
         }
     }
 }
