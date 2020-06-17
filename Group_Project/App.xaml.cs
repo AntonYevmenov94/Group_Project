@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Windows;
 using Group_Project.Services;
+using System.Reflection;
 
 namespace Group_Project
 {
@@ -27,6 +28,11 @@ namespace Group_Project
             builder.RegisterType<WindowsDialogService>().As<IDialogService>().SingleInstance();
             builder.RegisterType<Logger>().As<ILogger>();
             builder.RegisterType<LogMessageBuilder>().As<ILogMessageBuilder>();
+
+            // view-models
+            var asm = Assembly.GetExecutingAssembly();
+            builder.RegisterAssemblyTypes(asm)
+                .Where(t => t.Name.EndsWith("ViewModel"));
 
             // view
             builder.RegisterType<MainWindow>();

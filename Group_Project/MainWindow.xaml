@@ -14,13 +14,6 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <DockPanel Grid.Column="0">
-            <Button x:Name="bt1" Content="test" Click="bt1_Click"/>
-
-        </DockPanel>
+        
     </Grid>
 </Window>
