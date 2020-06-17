@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group_Project
 {
-    interface ILogMessageBuilder
+    public interface ILogMessageBuilder
     {
         /// <summary>
         /// Получить строку сообщения для действия создания или удаления.
@@ -17,7 +17,7 @@ namespace Group_Project
         string GetLogMessage(LogAction action, string objectOfAction);
 
         /// <summary>
-        /// Получить строку сообщения для действия создания или удаления.
+        /// Получить строку сообщения для действия изменения.
         /// </summary>
         /// <param name="action">Произведенное действие.</param>
         /// <param name="objectOfAction">Объект, над которым было произведено действие.</param>
@@ -26,9 +26,16 @@ namespace Group_Project
         /// <param name="newValue">Новое значение</param>
         /// <returns>Строка сообщения лога.</returns>
         string GetLogMessage(LogAction action, string objectOfAction, string changedProperty, string oldValue, string newValue);
+
+        /// <summary>
+        /// Получить строку сообщения для действия добавления комментария.
+        /// </summary>
+        /// <param name="comment">Комментарий.</param>
+        /// <returns>Строка сообщения лога.</returns>
+        string GetLogMessage(Comment comment);
     }
 
-    enum LogAction
+    public enum LogAction
     {
         UserCreated,
         UserDeleted,

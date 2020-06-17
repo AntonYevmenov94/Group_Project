@@ -30,8 +30,6 @@ namespace Group_Project.Services
 
         public string GetLogMessage(LogAction action, string objectOfAction)
         {
-            //throw new NotImplementedException();
-
             // как пример
             switch (action)
             {
@@ -44,8 +42,6 @@ namespace Group_Project.Services
 
         public string GetLogMessage(LogAction action, string objectOfAction, string changedProperty, string oldValue, string newValue)
         {
-            //throw new NotImplementedException();
-
             // как пример
             switch (action)
             {
@@ -54,6 +50,11 @@ namespace Group_Project.Services
                 default:
                     return "no message";
             }
+        }
+
+        public string GetLogMessage(Comment comment)
+        {
+            return $"{authService.LoggedUser.Login} добавил(а) комментарий \"{comment.Text}\" для человека {comment.Person.Name} {comment.Person.Surname} [{GetFormattedTime()}]";
         }
     }
 }
