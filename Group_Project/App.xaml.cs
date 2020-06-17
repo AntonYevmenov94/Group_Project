@@ -1,11 +1,7 @@
 ﻿using Autofac;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
+using Group_Project.Services;
 
 namespace Group_Project
 {
@@ -20,8 +16,17 @@ namespace Group_Project
         {
             base.OnStartup(e);
 
+            string dbConnStr = ConfigurationManager.ConnectionStrings["job"].ConnectionString;
+
             // регистрация компонентов в IoC контейнере
             var builder = new ContainerBuilder();
+
+            // сервисы
+            builder.RegisterType<AuthService>().As<IAuthService>().SingleInstance();
+            builder.Register(c => new DbContextProvider(dbConnStr)).As<IDbContextProvider>();
+            builder.RegisterType<WindowsDialogService>().As<IDialogService>().SingleInstance();
+            builder.RegisterType<Logger>().As<ILogger>();
+            builder.RegisterType<LogMessageBuilder>().As<ILogMessageBuilder>();
 
             // view
             builder.RegisterType<MainWindow>();

@@ -12,8 +12,12 @@ namespace Group_Project
     /// </summary>
     public interface IDbContextProvider
     {
-        string ConnectionString { get; set; }
         JobSeekerDbContext GetDbContext();
-        void RefreshDbContext();
+
+        /// <summary>
+        /// Инкапсулирует попытку сохранить сделанные изменения в БД. Исключения брошенные в процессе выполнения игнорируются!
+        /// </summary>
+        /// <returns>Успешность операции. true - операция завершилась успешно, false - во время операции возникли проблемы. </returns>
+        bool TrySaveChanges();
     }
 }

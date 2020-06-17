@@ -22,11 +22,12 @@ namespace Group_Project
         #region Constructor
 
         public BaseDialogViewModel(
-            IDbContextProvider dbContextProvider, 
-            IDialogService dialogService, 
-            ILogger logger, 
-            IAuthService accountService) 
-            : base(dbContextProvider, dialogService, logger, accountService)
+            IAuthService accountService,
+            IDbContextProvider dbContextProvider,
+            IDialogService dialogService,
+            ILogger logger,
+            ILogMessageBuilder logMessageBuilder) 
+            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
         }
         #endregion

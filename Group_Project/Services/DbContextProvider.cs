@@ -6,30 +6,36 @@ using System.Threading.Tasks;
 
 namespace Group_Project.Services
 {
-    class DbContextProvider : IDbContextProvider
+    public class DbContextProvider : IDbContextProvider
     {
-        private JobSeekerDbContext DbContext;
-        public string ConnectionString { get; set; }
+        private JobSeekerDbContext dbContext;
+        private readonly string connectionString;
+
+
+        public DbContextProvider(string connectionString)
+        {
+            this.connectionString = connectionString;
+            dbContext = new JobSeekerDbContext(connectionString);
+        }
+
 
         public JobSeekerDbContext GetDbContext()
         {
-            if (DbContext != null)
-            {
-                return DbContext;
-            }
-            else
-            {
-                RefreshDbContext();
-                return DbContext;
-            }
+            return dbContext;
         }
 
-        public void RefreshDbContext()
+        public bool TrySaveChanges()
         {
-            DbContext?.Dispose();
-            DbContext = new JobSeekerDbContext(ConnectionString);
-        }
+            try
+            {
+                dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
 
-        
+                return false;
+            }
+        }
     }
 }
