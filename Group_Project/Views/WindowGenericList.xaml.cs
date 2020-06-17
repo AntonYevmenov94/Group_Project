@@ -12,23 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Group_Project
+namespace Group_Project.Views
 {
     /// <summary>
     /// Логика взаимодействия для Positions.xaml
     /// </summary>
-    public partial class WindowPositions : Window
+    public partial class WindowGenericList : Window
     {
-        public WindowPositions()
+        public WindowGenericList()
         {
             InitializeComponent();
-        }
-
-        // TODO Удалить. За эти действия должна отвечать ViewModel
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            WindowADDPosition addForm = new WindowADDPosition();
-            addForm.Show();
         }
     }
 }
