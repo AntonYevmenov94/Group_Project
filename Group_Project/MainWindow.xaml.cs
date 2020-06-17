@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace Group_Project
 {
     /// <summary>
@@ -30,14 +32,16 @@ namespace Group_Project
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            db.Roles.Load();
+            //db.Roles.Load();
             
         }
 
         private void bt1_Click(object sender, RoutedEventArgs e)
         {
-            WindowPositions pform = new WindowPositions();
-            pform.Show();
+            TabPositions a = new TabPositions();
+
+            a.Show();
+
         }
     }
 }

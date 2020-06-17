@@ -1,9 +1,10 @@
 ﻿
-FF:\CommandProjectGroup\Group_Project\Group_Project\App.xaml;;
-FF:\CommandProjectGroup\Group_Project\Group_Project\MainWindow.xaml;;
-FF:\CommandProjectGroup\Group_Project\Group_Project\WindowAccountsUser.xaml;;
-FF:\CommandProjectGroup\Group_Project\Group_Project\WindowADDUser.xaml;;
-FF:\CommandProjectGroup\Group_Project\Group_Project\WindowADDVacancy.xaml;;
-FF:\CommandProjectGroup\Group_Project\Group_Project\WindowPositions.xaml;;
-FF:\CommandProjectGroup\Group_Project\Group_Project\WindowADDPosition.xaml;;
+Ff:\CommandProjectGroup\Group_Project\Group_Project\App.xaml;;
+Ff:\CommandProjectGroup\Group_Project\Group_Project\MainWindow.xaml;;
+Ff:\CommandProjectGroup\Group_Project\Group_Project\Views\WindowAccountsEdit.xaml;;
+Ff:\CommandProjectGroup\Group_Project\Group_Project\Views\WindowUser.xaml;;
+Ff:\CommandProjectGroup\Group_Project\Group_Project\Views\WindowVacancyAdd.xaml;;
+Ff:\CommandProjectGroup\Group_Project\Group_Project\Views\WindowPositionsCrud.xaml;;
+Ff:\CommandProjectGroup\Group_Project\Group_Project\Views\TabPositions.xaml;;
+Ff:\CommandProjectGroup\Group_Project\Group_Project\Views\WindowVacancyList.xaml;;
 

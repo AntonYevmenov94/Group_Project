@@ -25,5 +25,6 @@ namespace Group_Project
         [ForeignKey(nameof(PeopleId))]
 
         public virtual Person Person { get; set; }
+        public User User { get; internal set; }
     }
 }
