@@ -1,0 +1,88 @@
+﻿<Window x:Class="Group_Project.WindowLog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Group_Project"
+         mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="WindowLog" Height="539.602" Width="915.474" MinHeight="539" MinWidth="915">
+    <Grid Margin="0,0,3,1.333">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <!--Expander File Options-->
+        <Expander 
+      HorizontalAlignment="Stretch"
+      Header="Filter options"
+            BorderBrush="Black"
+            BorderThickness="1.5" 
+            Margin="10,35,100,13.667">
+            <!--Контейнеры для елементов Expander-->           
+            <StackPanel  Grid.Row="0" >
+                <Grid x:Name="ta2" Height="177" Width="783">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="427*"/>
+                        <ColumnDefinition Width="18*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Елеиенты Expander-->
+                    <Label Content="Логин" FontSize="20" Margin="0,0,48.333,0.667" >
+                    </Label>
+                    <Label Content="Человек" FontSize="20" Grid.Column="2" Margin="1.667,0,425.666,0.667" Grid.ColumnSpan="4" />
+                    <TextBox Text="Логин"  BorderThickness="3" Margin="0,14.333,47.333,9" Grid.Row="1" />
+                    <TextBox Text="ID или ФИО человека" Grid.Column="2"  BorderThickness="3" Margin="1.667,14.333,424.666,9" Grid.Row="1" Grid.ColumnSpan="4"/>
+                    <Button Background="#FF3F51B5" Content="Применить фильтр" Grid.Row="2" Margin="0,29,10.333,30.333" Grid.RowSpan="2" />
+                    <Button Background="#FF3F51B5" Content="Сбросить фильтр" Grid.Row="2" Grid.Column="2" Margin="13.667,29,8.333,30.333" Grid.RowSpan="2"/>
+                </Grid>
+            </StackPanel>
+
+        </Expander>
+           <!--Контейнер для таблицы-->        
+        <StackPanel Grid.Row="2" 
+                    Margin="0,0.333,-6,23.667" 
+                    Grid.ColumnSpan="2"
+                    >
+            <ScrollViewer>
+                <DataGrid x:Name="dt"
+                      Background="White"   
+                      VerticalAlignment="Top" 
+                      
+                      Margin="10,0,46.333,0" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                    <!--Таблица-->
+                    <DataGrid.Columns >
+                        <DataGridTextColumn  Header="DateTime" Width="260"/>
+                        <DataGridTextColumn Header= "User" Width="260"/>
+                        <DataGridTextColumn Header="LogMessage" Width="273"/>
+                    </DataGrid.Columns>
+                   <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FF3F51B5" />
+                    </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -21,23 +21,25 @@ namespace Group_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        JobSeekerDbContext db = new JobSeekerDbContext();
+      //  JobSeekerDbContext db = new JobSeekerDbContext();
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += MainWindow_Loaded;
+            //Loaded += MainWindow_Loaded;
         }
 
         // TODO Удалить. Загрузка информации из БД должна производиться в ViewModel'ях
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            //db.Roles.Load();
-        }
+        //private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        //{
+        //    //db.Roles.Load();
+        //}
 
         private void bt1_Click(object sender, RoutedEventArgs e)
         {
-            WindowPositions pform = new WindowPositions();
-            pform.Show();
+            //WindowPositions pform = new WindowPositions();
+            //pform.Show();
+            WindowLog windowLog = new WindowLog();
+            windowLog.Show();
         }
     }
 }

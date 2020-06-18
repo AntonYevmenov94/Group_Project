@@ -35,8 +35,15 @@ namespace Group_Project.Services
             // как пример
             switch (action)
             {
+                //добавление пользователя
                 case LogAction.UserCreated:
                     return $"{authService.LoggedUser.Login} создал пользователя {objectOfAction} [{GetFormattedTime()}]";
+                    //удаление пользователя
+                case LogAction.UserDeleted:
+                    return $"{authService.LoggedUser.Login} удалил пользователя {objectOfAction} [{GetFormattedTime()}]";
+                 //подтвеждение регистрации пользоватля
+                case LogAction.UserRegistration:
+                    return $"{authService.LoggedUser.Login} подтвердил регистрацию пользователя {objectOfAction} [{GetFormattedTime()}]";
                 default:
                     return "no message";
             }
@@ -47,13 +54,30 @@ namespace Group_Project.Services
             //throw new NotImplementedException();
 
             // как пример
+            //изменение роли, изменение информации о пользователе
             switch (action)
             {
                 case LogAction.UserChanged:
                     return $"{authService.LoggedUser.Login} изменил {changedProperty} пользователя {objectOfAction} с '{oldValue}' на '{newValue}' [{GetFormattedTime()}]";
+                //изменение статуса пользователя
+                case LogAction.UserChangedStatus:
+                    {     if (oldValue != newValue)
+                            {
+                                return $"{objectOfAction} прошел техсобеседование [{GetFormattedTime()}]";
+                           
+                            }
+                      return $"{objectOfAction} не прошел техсобеседование [{GetFormattedTime()}]";
+                    }
                 default:
                     return "no message";
             }
         }
+        //добавление комментария
+        public string GetLogMessage(Comment comment)
+        {
+             return $"{comment.User.Login} добавил(a) комментарий <<{comment.Text}>> {comment.Person.Name} {comment.Person.Surname} [{GetFormattedTime()}]";
+        }
+
+
     }
 }

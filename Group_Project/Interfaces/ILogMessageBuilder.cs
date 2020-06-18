@@ -26,13 +26,22 @@ namespace Group_Project
         /// <param name="newValue">Новое значение</param>
         /// <returns>Строка сообщения лога.</returns>
         string GetLogMessage(LogAction action, string objectOfAction, string changedProperty, string oldValue, string newValue);
+
+        /// <summary>
+        /// Получить строку сообщения для действия создания или удаления.
+        /// </summary>
+        /// <param name="comment">Комментарий.</param>
+        /// <returns>Строка сообщения лога.</returns>
+        string GetLogMessage(Comment comment);
     }
 
     enum LogAction
     {
         UserCreated,
         UserDeleted,
-        UserChanged
+        UserChanged,
+        UserRegistration,
+        UserChangedStatus
         // расписать действия здесь
     }
 }
