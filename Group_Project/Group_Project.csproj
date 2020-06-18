@@ -129,6 +129,9 @@
     <Compile Include="ViewModels\WindowTechListViewModel.cs" />
     <Compile Include="ViewModels\WindowTextLineEditViewModel.cs" />
     <Compile Include="ViewModels\WindowUserListViewModel.cs" />
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
     <Compile Include="Views\WindowVacancyEdit.xaml.cs">
       <DependentUpon>WindowVacancyEdit.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
