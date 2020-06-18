@@ -3,6 +3,7 @@ using Group_Project.Services;
 using System.Configuration;
 using System.Reflection;
 using System.Windows;
+using Group_Project.Views;
 
 namespace Group_Project
 {

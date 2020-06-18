@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group_Project.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Group_Project
+namespace Group_Project.Views
 {
     /// <summary>
-    /// Логика взаимодействия для Window.xaml
+    /// Логика взаимодействия для WindowResponseEdit.xaml
     /// </summary>
-    public partial class WindowLog : Window
+    public partial class WindowResponseEdit : Window
     {
-        public WindowLog()
+        public WindowResponseEdit()
         {
             InitializeComponent();
         }

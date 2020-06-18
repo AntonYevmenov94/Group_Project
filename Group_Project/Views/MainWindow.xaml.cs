@@ -1,7 +1,7 @@
 ﻿using Group_Project.ViewModels;
 using System.Windows;
 
-namespace Group_Project
+namespace Group_Project.Views
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
