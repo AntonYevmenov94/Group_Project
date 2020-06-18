@@ -129,6 +129,7 @@
     <Compile Include="ViewModels\WindowDepartmentListViewModel.cs" />
     <Compile Include="ViewModels\WindowLogViewModel.cs" />
     <Compile Include="ViewModels\WindowPositionListViewModel.cs" />
+    <Compile Include="ViewModels\WindowDisciplineListViewModel.cs" />
     <Compile Include="ViewModels\WindowTechListViewModel.cs" />
     <Compile Include="ViewModels\WindowTextLineEditViewModel.cs" />
     <Compile Include="ViewModels\WindowUserListViewModel.cs" />
