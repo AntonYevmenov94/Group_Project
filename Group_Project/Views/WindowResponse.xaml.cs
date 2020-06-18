@@ -18,12 +18,11 @@ namespace Group_Project.Views
     /// <summary>
     /// Логика взаимодействия для ResponseWindow.xaml
     /// </summary>
-    public partial class ResponseWindow : Window
+    public partial class WindowResponse : Window
     {
-        public ResponseWindow()
+        public WindowResponse()
         {
             InitializeComponent();
-            DataContext = new ResponseViewModel();
         }
     }
 }

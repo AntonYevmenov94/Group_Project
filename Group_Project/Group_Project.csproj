@@ -95,9 +95,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\ValueConverterMarkupBase.cs" />
+    <Compile Include="Interfaces\ILogMessageBuilder.cs" />
     <Compile Include="ViewModels\ResponseViewModel.cs" />
-    <Compile Include="Views\ResponseWindow.xaml.cs">
-      <DependentUpon>ResponseWindow.xaml</DependentUpon>
+    <Compile Include="Views\WindowResponse.xaml.cs">
+      <DependentUpon>WindowResponse.xaml</DependentUpon>
     </Compile>
     <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />
@@ -130,7 +131,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\ResponseWindow.xaml">
+    <Page Include="Views\WindowResponse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

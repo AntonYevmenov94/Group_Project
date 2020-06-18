@@ -10,11 +10,23 @@ using System.Threading.Tasks;
 
 namespace Group_Project.ViewModels
 {
-    public class ResponseViewModel : INotifyPropertyChanged
+    public class ResponseViewModel : BaseDialogViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        // Фабричный метод для создания экземпляров классов, у которых не все зависимости 
+        // известны на момент компиляции. Автоматически подхватывается Autofac.
+        // В параметры требует только параметры конструктора, которые отсутствуют у BaseViewModel.
+        // (имена параметров у фабрики и конструктора должны совпадать)
+        public delegate ResponseViewModel Factory(Response response);
+
         JobSeekerDbContext db;
-        public ResponseViewModel()
+        public ResponseViewModel(
+           IAuthService accountService,
+            IDbContextProvider dbContextProvider,
+            IDialogService dialogService,
+            ILogger logger,
+            ILogMessageBuilder logMessageBuilder,
+            Response response)
+            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
             db = new JobSeekerDbContext();
             db.Vacancies.Load();
@@ -29,7 +41,7 @@ namespace Group_Project.ViewModels
             VacancyTechnologies = db.Technologies.Local;
             Genders = db.Sex.Local;
             Persons = db.Persons.Local;
-        }
+        } 
 
         public Vacancy SelectedVacansy { get; set; }
         public Person SelectedPerson { get; set; }

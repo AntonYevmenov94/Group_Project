@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -14,27 +15,24 @@ namespace Group_Project
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private ILogger logger;
-        private IDialogService dialogService;
-        public IDbContextProvider dbContextProvider;
+        protected ILogger logger;
+        protected ILogMessageBuilder logMessageBuilder;
+        protected IDialogService dialogService;
+        protected IDbContextProvider dbContextProvider;
         public IAuthService accountService;
 
         public BaseViewModel(
+            IAuthService accountService,
             IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
-            IAuthService accountService)
+            ILogMessageBuilder logMessageBuilder)
         {
+            this.accountService = accountService;
             this.dbContextProvider = dbContextProvider;
             this.dialogService = dialogService;
             this.logger = logger;
-            this.accountService = accountService;
-        }
-
-        public BaseViewModel(IDbContextProvider dbContextProvider, IDialogService dialogService)
-        {
-            this.dbContextProvider = dbContextProvider;
-            this.dialogService = dialogService;
+            this.logMessageBuilder = logMessageBuilder;
         }
     }
 }
