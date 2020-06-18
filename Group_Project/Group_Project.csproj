@@ -129,6 +129,9 @@
     <Compile Include="ViewModels\WindowTechListViewModel.cs" />
     <Compile Include="ViewModels\WindowTextLineEditViewModel.cs" />
     <Compile Include="ViewModels\WindowUserListViewModel.cs" />
+    <Compile Include="Views\AuthPage.xaml.cs">
+      <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Controls\PersonView.xaml.cs">
       <DependentUpon>PersonView.xaml</DependentUpon>
     </Compile>
@@ -183,6 +186,10 @@
     <Page Include="Resources\Variables.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Controls\PersonView.xaml">
       <Generator>MSBuild:Compile</Generator>
