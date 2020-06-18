@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Group_Project.Views
 {
     /// <summary>
-    /// Логика взаимодействия для TabEmployees.xaml
+    /// Interaction logic for TabEmployees.xaml
     /// </summary>
-    public partial class TabEmployees : Window
+    public partial class TabEmployees : UserControl
     {
         public TabEmployees()
         {

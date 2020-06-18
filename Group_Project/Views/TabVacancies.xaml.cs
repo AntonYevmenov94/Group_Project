@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Group_Project.Views
 {
     /// <summary>
-    /// Interaction logic for TabPeople.xaml
+    /// Interaction logic for TabVacancies.xaml
     /// </summary>
-    public partial class TabPeople : UserControl
+    public partial class TabVacancies : UserControl
     {
-        public TabPeople()
+        public TabVacancies()
         {
             InitializeComponent();
         }

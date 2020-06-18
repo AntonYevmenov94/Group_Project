@@ -150,8 +150,8 @@
     <Compile Include="Views\TabResponses.xaml.cs">
       <DependentUpon>TabResponses.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TabVacancyList.xaml.cs">
-      <DependentUpon>TabVacancyList.xaml</DependentUpon>
+    <Compile Include="Views\TabVacancies.xaml.cs">
+      <DependentUpon>TabVacancies.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WindowDisciplineEdit.xaml.cs">
       <DependentUpon>WindowDisciplineEdit.xaml</DependentUpon>
@@ -204,20 +204,20 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\TabEmployees.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TabPeople.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TabResponses.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TabVacancyList.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\TabVacancies.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WindowDisciplineEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
