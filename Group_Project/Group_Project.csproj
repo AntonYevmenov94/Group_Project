@@ -129,11 +129,17 @@
     <Compile Include="ViewModels\WindowTechListViewModel.cs" />
     <Compile Include="ViewModels\WindowTextLineEditViewModel.cs" />
     <Compile Include="ViewModels\WindowUserListViewModel.cs" />
+    <Compile Include="Views\Controls\PersonView.xaml.cs">
+      <DependentUpon>PersonView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowPersonEdit.xaml.cs">
+      <DependentUpon>WindowPersonEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WindowResponseEdit.xaml.cs">
       <DependentUpon>WindowResponseEdit.xaml</DependentUpon>
@@ -162,11 +168,23 @@
     <Compile Include="Views\WindowVacancyEdit.xaml.cs">
       <DependentUpon>WindowVacancyEdit.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resources\Variables.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Controls\PersonView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WindowPersonEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
