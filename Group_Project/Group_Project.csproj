@@ -112,6 +112,15 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
+    <Compile Include="Views\TabEmployees.xaml.cs">
+      <DependentUpon>TabEmployees.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TabPeople.xaml.cs">
+      <DependentUpon>TabPeople.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TabResponses.xaml.cs">
+      <DependentUpon>TabResponses.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WindowDiscipline.xaml.cs">
       <DependentUpon>WindowDiscipline.xaml</DependentUpon>
     </Compile>
@@ -157,6 +166,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\TabEmployees.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TabPeople.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TabResponses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\WindowGenericList.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
