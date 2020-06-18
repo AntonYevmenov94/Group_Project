@@ -162,11 +162,9 @@
     </Page>
     <Page Include="Views\WindowDiscipline.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WindowPositionEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\WindowTextLineEdit.xaml">
       <SubType>Designer</SubType>
