@@ -23,7 +23,7 @@ namespace Group_Project
         public WindowAccountsEdit()
         {
             InitializeComponent();
-            this.DataContext = new AccountViewModel();
+            //this.DataContext = new AccountsViewModel();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

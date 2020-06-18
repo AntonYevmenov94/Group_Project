@@ -14,9 +14,10 @@ namespace Group_Project
         public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+        public bool IsLoggedIn { get; set; }
         public int RolesId { get; set; }
         [ForeignKey(nameof(RolesId))]
-        public virtual Roles Role { get; set; }
+        public virtual Role Role { get; set; }
 
     }
 }

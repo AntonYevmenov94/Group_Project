@@ -66,6 +66,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -101,10 +103,10 @@
     <Compile Include="Interfaces\IDbContextProvider.cs" />
     <Compile Include="Interfaces\IDialogService.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
-    <Compile Include="Interfaces\JobSeekerDbContext.cs" />
+    <Compile Include="Interfaces\ILogMessageBuilder.cs" />
     <Compile Include="ModelEntityClasses\Email.cs" />
     <Compile Include="ModelEntityClasses\Employee.cs" />
-    <Compile Include="EntityContext\JobSekeerContext.cs" />
+    <Compile Include="EntityContext\JobSeekerDbContext.cs" />
     <Compile Include="ModelEntityClasses\Log.cs" />
     <Compile Include="ModelEntityClasses\Person.cs" />
     <Compile Include="ModelEntityClasses\Phone.cs" />
@@ -118,21 +120,27 @@
     <Compile Include="ModelEntityClasses\User.cs" />
     <Compile Include="ModelEntityClasses\Vacancy.cs" />
     <Compile Include="Services\AuthService.cs" />
+    <Compile Include="Services\DbContextProvider.cs" />
     <Compile Include="Services\Logger.cs" />
+    <Compile Include="Services\LogMessageBuilder.cs" />
+    <Compile Include="Services\WindowsDialogService.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="VakueConverters\NullToBoolConverter.cs" />
-    <Compile Include="ViewModel\AccountViewModel.cs" />
-    <Compile Include="ViewModel\VacancyViewModel.cs" />
+    <Compile Include="ViewModel\AccountsViewModel.cs" />
+    <Compile Include="ViewModel\WindowPositionListViewModel.cs" />
+    <Compile Include="ViewModel\UserViewModel.cs" />
+    <Compile Include="ViewModel\VacancyAddViewModel.cs" />
+    <Compile Include="ViewModel\TabVacanciesViewModel.cs" />
     <Compile Include="Views\WindowAccountsEdit.xaml.cs">
       <DependentUpon>WindowAccountsEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TabPositions.xaml.cs">
-      <DependentUpon>TabPositions.xaml</DependentUpon>
+    <Compile Include="Views\WindowPositionEdit.xaml.cs">
+      <DependentUpon>WindowPositionEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WindowVacancyList.xaml.cs">
-      <DependentUpon>WindowVacancyList.xaml</DependentUpon>
+    <Compile Include="Views\TabVacancyList.xaml.cs">
+      <DependentUpon>TabVacancyList.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -161,15 +169,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WindowPositionsCrud.xaml">
+    <Page Include="Views\WindowGenericList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TabPositions.xaml">
+    <Page Include="Views\WindowPositionEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\WindowVacancyList.xaml">
+    <Page Include="Views\TabVacancyList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,8 +189,8 @@
     <Compile Include="Views\WindowVacancyAdd.xaml.cs">
       <DependentUpon>WindowVacancyAdd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WindowPositionsCrud.xaml.cs">
-      <DependentUpon>WindowPositionsCrud.xaml</DependentUpon>
+    <Compile Include="Views\WindowGenericList.xaml.cs">
+      <DependentUpon>WindowGenericList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

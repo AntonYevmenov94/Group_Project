@@ -7,28 +7,35 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 using System.Windows;
 using Group_Project.Utilities;
+using Group_Project.Helper;
+using Group_Project.Interfaces;
 
 namespace Group_Project.ViewModel
 {
-     public class AccountViewModel
+     public class AccountsViewModel : BaseViewModel
     {
         public ObservableCollection<User> Users { get; set; }
         public User SelectedUser { get; set; }
 
         public ICommand AddUserCommand { get; private set; }
-
         public ICommand EditUserCommand { get; set; }
 
 
-        public AccountViewModel()
+        public AccountsViewModel(IDbContextProvider dbContextProvider,
+            IDialogService dialogService,
+            ILogger logger,
+            IAuthService accountService,
+            User vacancy)
+            : base(dbContextProvider, dialogService, logger, accountService)
         {
             Users = new ObservableCollection<User>();
-            AddUserCommand = new RelayCommand(AddUser);
-            EditUserCommand = new RelayCommand(EditUser);
+            //AddUserCommand = new RelayCommand(AddUser);
+            //EditUserCommand = new RelayCommand(EditUser);
             Users.Add(new User { Id = 1, Login = "Serhii", Password = "111", Email = "ruban@gmail.com", RolesId = 1 });
             Users.Add(new User { Id = 2, Login = "Kliment", Password = "222", Email = "kliment.kim@gmail.com", RolesId = 2 });
 
         }
+               
 
         private void AddUser(object obj)
         {

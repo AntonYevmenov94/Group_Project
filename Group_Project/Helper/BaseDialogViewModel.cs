@@ -24,12 +24,16 @@ namespace Group_Project.Helper
         #region Constructor
 
         public BaseDialogViewModel(
+            IAuthService accountService,
             IDbContextProvider dbContextProvider,
-            IDialogService dialogService)
+            IDialogService dialogService,
+            ILogger logger)
             : base(dbContextProvider, dialogService)
         {
 
         }
+
+      
         #endregion
 
 
@@ -52,6 +56,8 @@ namespace Group_Project.Helper
         /// Отменить выполнение действия в диалоге (обычно кнопки No, Нет)
         /// </summary>
         private RelayCommand dismissCmd;
+        private IDialogService dialogService;
+
         public RelayCommand DissmissCmd
         {
             get => dismissCmd ?? (dismissCmd = new RelayCommand(

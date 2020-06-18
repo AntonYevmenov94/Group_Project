@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace Group_Project
 {
     /// <summary>
-    /// Логика взаимодействия для Positions.xaml
+    /// Логика взаимодействия для WindowADDPosition.xaml
     /// </summary>
-    public partial class WindowPositionsCrud : Window
+    public partial class WindowPositionEdit : Window
     {
-        public WindowPositionsCrud()
+        public WindowPositionEdit()
         {
             InitializeComponent();
         }
-
-       
     }
 }

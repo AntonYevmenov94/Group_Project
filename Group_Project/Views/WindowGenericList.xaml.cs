@@ -15,13 +15,15 @@ using System.Windows.Shapes;
 namespace Group_Project
 {
     /// <summary>
-    /// Логика взаимодействия для WindowVacancy.xaml
+    /// Логика взаимодействия для Positions.xaml
     /// </summary>
-    public partial class WindowVacancyList : Window
+    public partial class WindowGenericList : Window
     {
-        public WindowVacancyList()
+        public WindowGenericList()
         {
             InitializeComponent();
         }
+
+       
     }
 }

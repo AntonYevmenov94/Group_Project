@@ -23,7 +23,7 @@ namespace Group_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        JobSekeerContext db = new JobSekeerContext();
+        JobSeekerDbContext db;
         public MainWindow()
         {
             InitializeComponent();
@@ -38,9 +38,7 @@ namespace Group_Project
 
         private void bt1_Click(object sender, RoutedEventArgs e)
         {
-            TabPositions a = new TabPositions();
-
-            a.Show();
+                      
 
         }
     }

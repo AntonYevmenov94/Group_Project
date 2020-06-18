@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Group_Project
 {
     /// <summary>
-    /// Логика взаимодействия для WindowADDPosition.xaml
+    /// Логика взаимодействия для WindowVacancy.xaml
     /// </summary>
-    public partial class TabPositions : Window
+    public partial class TabVacancyList : Window
     {
-        public TabPositions()
+        public TabVacancyList()
         {
             InitializeComponent();
         }
