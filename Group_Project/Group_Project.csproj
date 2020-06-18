@@ -138,14 +138,14 @@
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WindowLog.xaml.cs">
-      <DependentUpon>WindowLog.xaml</DependentUpon>
+    <Compile Include="Views\TabEmployees.xaml.cs">
+      <DependentUpon>TabEmployees.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WindowPersonEdit.xaml.cs">
-      <DependentUpon>WindowPersonEdit.xaml</DependentUpon>
+    <Compile Include="Views\TabPeople.xaml.cs">
+      <DependentUpon>TabPeople.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\WindowResponseEdit.xaml.cs">
-      <DependentUpon>WindowResponseEdit.xaml</DependentUpon>
+    <Compile Include="Views\TabResponses.xaml.cs">
+      <DependentUpon>TabResponses.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TabVacancyList.xaml.cs">
       <DependentUpon>TabVacancyList.xaml</DependentUpon>
@@ -156,8 +156,17 @@
     <Compile Include="Views\WindowGenericList.xaml.cs">
       <DependentUpon>WindowGenericList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\WindowLog.xaml.cs">
+      <DependentUpon>WindowLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowPersonEdit.xaml.cs">
+      <DependentUpon>WindowPersonEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WindowPositionEdit.xaml.cs">
       <DependentUpon>WindowPositionEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowResponseEdit.xaml.cs">
+      <DependentUpon>WindowResponseEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WindowTextLineEdit.xaml.cs">
       <DependentUpon>WindowTextLineEdit.xaml</DependentUpon>
@@ -187,15 +196,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\WindowLog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\WindowPersonEdit.xaml">
+    <Page Include="Views\TabEmployees.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\WindowResponseEdit.xaml">
+    <Page Include="Views\TabPeople.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TabResponses.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -211,7 +220,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\WindowLog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WindowPersonEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\WindowPositionEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WindowResponseEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
