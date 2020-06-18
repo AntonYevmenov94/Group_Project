@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace Group_Project.ViewModels
 {
@@ -19,14 +15,18 @@ namespace Group_Project.ViewModels
         public string ListTitle { get; set; }
         // коллекция элементов, которые отображаются в списке
         public ObservableCollection<Position> ListItems { get; set; }
+        public Department SelectedPosition { get; set; }
+
+        public ICommand AddCommand { get; set; }
+        public ICommand CancelCommand { get; set; }
 
         public WindowPositionListViewModel(
-            IAuthService accountService,
+            IAuthService authService,
             IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
             ILogMessageBuilder logMessageBuilder)
-            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
+            : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
         }
     }

@@ -1,0 +1,128 @@
+﻿<Window x:Class="Group_Project.Views.WindowVacancyEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Group_Project"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Вакансия" Height="900" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+             <ColumnDefinition Width="571*"/>
+            <ColumnDefinition Width="222*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!--Текущее время заявки-->
+            <RowDefinition Height="auto"/>
+            <!--Название вакансии-->
+            <RowDefinition Height="auto"/>
+            <!--Описание вакансии-->
+            <RowDefinition Height="2*"/>
+            <!--ComboBox-->
+            <RowDefinition Height="auto"/>
+            <!--ListBox Disciplines-->
+            <RowDefinition/>
+            <!--ListBox Technologies-->
+            <RowDefinition/>
+            <!--Кнопка Восстановить-->
+            <RowDefinition Height="auto"/>
+            <!--отклики-->
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <!--Статус заявки-->
+                <ColumnDefinition Width="100"/>
+                <!--Время заявок-->
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+                <!--Кнопка архив-->
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Открыта:" Margin="10" FontSize="14"/>
+            <TextBlock Grid.Column="1" Text="{Binding StartDate}" Margin="15" FontSize="14"/>
+            <Label Grid.Row="1" Content="Закрыта:" Margin="10" FontSize="14"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding EndDate}" Margin="15" FontSize="14"/>
+            <Button x:Name="btArchive" Grid.Column="3" Grid.Row="1"
+                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
+                    Margin="5" Content="Архив" FontSize="14"
+                    Command="{Binding ArchiveVacancyCommand}"/>
+        </Grid>
+        <TextBlock Grid.Row="1" Margin="10,10,0,10" Width="500" 
+                   HorizontalAlignment="Left" Text="{Binding Title}" 
+                   FontSize="20"/>
+        <TextBox Text="{Binding Description}" Grid.Row="2"
+                 Margin="10,10,0,10" Width="765" FontSize="16" HorizontalAlignment="Left"
+                 BorderBrush="#FF0057D8" BorderThickness="1" Grid.ColumnSpan="2"/>
+        <!--<Label Grid.Row="3" Content="Предметы" FontSize="16" Margin="5"/>-->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <ComboBox Width="400" Height="35" 
+                      materialDesign:HintAssist.Hint="Search" 
+                      materialDesign:HintAssist.HintOpacity=".26" 
+                      IsEditable="True"
+                      HorizontalAlignment="Left" Margin="5"
+                      ItemsSource="{Binding Disciplines}">
+                <ComboBoxItem>
+
+                </ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="btAddSubject" Width="120" Margin="10"
+                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
+                    Content="Добавить" FontSize="14"
+                    Command="{Binding AddDisciplineCommand}"/>
+        </StackPanel>
+        <!--Предметы-->
+        <ListBox x:Name="lbSubjects" Grid.Row="4" 
+                 BorderBrush="#FF0057D8" BorderThickness="2" 
+                 Margin="10" Grid.ColumnSpan="2"
+                 ItemsSource="{Binding Disciplines}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                         <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Title}" Margin="5" FontSize="14"/>
+                            <TextBlock Text="{Binding Title}" Margin="5" FontSize="14"/>
+                        </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <!--Технологии-->
+        <ListBox x:Name="lbTeсhnology" Grid.Row="5" 
+                 BorderBrush="#FF0057D8" BorderThickness="2" Margin="10" Grid.ColumnSpan="2"
+                 ItemsSource="{Binding Technologies}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Title}" Margin="5" FontSize="14"/>
+                        <TextBlock Text="{Binding Title}" Margin="5" FontSize="14"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="btReestablish" Grid.Row="6" Content="Восстановить"
+                materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
+                Width="130" Height="40"
+                HorizontalAlignment="Right" Margin="0,10,10,10" Grid.Column="1"
+                Command="{Binding BackVacancyCommand}"/>
+        <Grid Grid.Row="7" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Margin="5" Width="200" HorizontalAlignment="Right">
+                <Button x:Name="btFeedback" Content="N откликов" 
+                        materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
+                        Foreground="Black" FontSize="16" Margin="5" Background="#33FF99" Height="40"
+                        Command="{Binding NResponseCommand}"/>
+                <Button x:Name="btCreateFeedback" Content="Создать отклик" 
+                        materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
+                        Margin="5" Background="#33FF99" Foreground="Black" FontSize="16" Height="40"
+                        Command="{Binding CreateResponseCommand}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

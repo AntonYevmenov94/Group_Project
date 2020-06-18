@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 
 namespace Group_Project.ViewModels
 {
@@ -21,12 +16,12 @@ namespace Group_Project.ViewModels
         public ObservableCollection<Discipline> ListItems { get; set; }
 
         public WindowDisciplineListViewModel(
-            IAuthService accountService,
+            IAuthService authService,
             IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
             ILogMessageBuilder logMessageBuilder)
-            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
+            : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
         }
     }

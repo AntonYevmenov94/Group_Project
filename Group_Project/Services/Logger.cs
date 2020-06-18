@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Group_Project;
 
 namespace Group_Project.Services
 {
-    class Logger : ILogger
+    internal class Logger : ILogger
     {
-        private readonly IAuthService accountService;
+        private readonly IAuthService authService;
         private readonly IDbContextProvider dbContextProvider;
-        
+
         public Logger(
-            IAuthService accountService,
+            IAuthService authService,
             IDbContextProvider dbContextProvider)
         {
-            this.accountService = accountService;
+            this.authService = authService;
             this.dbContextProvider = dbContextProvider;
         }
 
@@ -24,7 +19,7 @@ namespace Group_Project.Services
         {
             Log log = new Log() {
                 Message = logMessage,
-                User = accountService.LoggedUser,
+                User = authService.LoggedUser,
                 Person = subject,
                 Time = DateTime.Now
             };

@@ -3,11 +3,11 @@
 namespace Group_Project.Views
 {
     /// <summary>
-    /// Логика взаимодействия для Positions.xaml
+    /// Логика взаимодействия для WindowUserEdit.xaml
     /// </summary>
-    public partial class WindowGenericList : Window
+    public partial class WindowUserEdit : Window
     {
-        public WindowGenericList()
+        public WindowUserEdit()
         {
             InitializeComponent();
         }

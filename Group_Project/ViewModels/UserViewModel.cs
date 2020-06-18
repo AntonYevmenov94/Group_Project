@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Group_Project.ViewModels
+﻿namespace Group_Project.ViewModels
 {
     public class UserViewModel : BaseDialogViewModel
     {
@@ -15,13 +9,13 @@ namespace Group_Project.ViewModels
         public delegate UserViewModel Factory(User user);
 
         public UserViewModel(
-            IAuthService accountService,
+            IAuthService authService,
             IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
             ILogMessageBuilder logMessageBuilder,
             User user)
-            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
+            : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
         }
     }

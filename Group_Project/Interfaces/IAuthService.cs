@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Group_Project
+﻿namespace Group_Project
 {
     /// <summary>
     /// Обеспечивает доступ к текущему пользователю и его роли.
@@ -15,7 +9,8 @@ namespace Group_Project
         AccountRights AccountRights { get; }
     }
 
-    public enum AccountRights {
+    public enum AccountRights
+    {
         NonAuthenticated,
         Admin,
         Director,

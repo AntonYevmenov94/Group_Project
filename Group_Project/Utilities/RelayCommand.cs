@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Group_Project
@@ -15,8 +11,8 @@ namespace Group_Project
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        Action<object> action;
-        Func<object, bool> canExecute;
+        private Action<object> action;
+        private Func<object, bool> canExecute;
 
         public RelayCommand(Action<object> action, Func<object, bool> canExecute = null)
         {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Group_Project.ViewModels
+﻿namespace Group_Project.ViewModels
 {
     public class WindowTextLineEditViewModel : BaseDialogViewModel
     {
@@ -12,12 +6,12 @@ namespace Group_Project.ViewModels
         public string HintWhatIsEdited { get; set; }
 
         public WindowTextLineEditViewModel(
-            IAuthService accountService, 
-            IDbContextProvider dbContextProvider, 
-            IDialogService dialogService, 
-            ILogger logger, 
-            ILogMessageBuilder logMessageBuilder) 
-            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
+            IAuthService authService,
+            IDbContextProvider dbContextProvider,
+            IDialogService dialogService,
+            ILogger logger,
+            ILogMessageBuilder logMessageBuilder)
+            : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
         }
     }

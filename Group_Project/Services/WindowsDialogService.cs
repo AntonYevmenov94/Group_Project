@@ -1,14 +1,11 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Group_Project.Services
 {
-    class WindowsDialogService : IDialogService
+    internal class WindowsDialogService : IDialogService
     {
         private Dictionary<Type, Type> viewModelToViewRelations = new Dictionary<Type, Type>();
 

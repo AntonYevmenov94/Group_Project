@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Group_Project
 {
@@ -18,16 +13,16 @@ namespace Group_Project
         protected ILogMessageBuilder logMessageBuilder;
         protected IDialogService dialogService;
         protected IDbContextProvider dbContextProvider;
-        public IAuthService accountService;
+        public IAuthService authService;
 
         public BaseViewModel(
-            IAuthService accountService,
+            IAuthService authService,
             IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
             ILogMessageBuilder logMessageBuilder)
         {
-            this.accountService = accountService;
+            this.authService = authService;
             this.dbContextProvider = dbContextProvider;
             this.dialogService = dialogService;
             this.logger = logger;

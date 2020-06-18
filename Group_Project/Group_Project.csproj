@@ -95,26 +95,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Helpers\ValueConverterMarkupBase.cs" />
-    <Compile Include="Interfaces\ILogMessageBuilder.cs" />
+    <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DbContextProvider.cs" />
+    <Compile Include="Services\Logger.cs" />
     <Compile Include="Services\LogMessageBuilder.cs" />
     <Compile Include="Services\WindowsDialogService.cs" />
-    <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
-    <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />
-    <Compile Include="VakueConverters\NullToBoolConverter.cs" />
-    <Compile Include="Helpers\BaseDialogViewModel.cs" />
-    <Compile Include="Helpers\BaseViewModel.cs" />
-    <Compile Include="Interfaces\IDbContextProvider.cs" />
-    <Compile Include="Interfaces\IDialogService.cs" />
-    <Compile Include="Interfaces\ILogger.cs" />
-    <Compile Include="Interfaces\IAuthService.cs" />
-    <Compile Include="Services\AuthService.cs" />
-    <Compile Include="Services\Logger.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
-    <Compile Include="Views\WindowDiscipline.xaml.cs">
-      <DependentUpon>WindowDiscipline.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ValueConverters\BoolToVisibilityConverter.cs" />
+    <Compile Include="ValueConverters\BoolToVisibilityInvertConverter.cs" />
+    <Compile Include="ValueConverters\NullToBoolConverter.cs" />
     <Compile Include="ViewModels\AuthPageViewModel.cs" />
     <Compile Include="ViewModels\DisciplineViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
@@ -130,11 +119,21 @@
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModels\VacancyViewModel.cs" />
     <Compile Include="ViewModels\WindowDepartmentListViewModel.cs" />
+    <Compile Include="ViewModels\WindowDisciplineListViewModel.cs" />
     <Compile Include="ViewModels\WindowLogViewModel.cs" />
     <Compile Include="ViewModels\WindowPositionListViewModel.cs" />
     <Compile Include="ViewModels\WindowTechListViewModel.cs" />
     <Compile Include="ViewModels\WindowTextLineEditViewModel.cs" />
     <Compile Include="ViewModels\WindowUserListViewModel.cs" />
+    <Compile Include="Views\TabVacancyList.xaml.cs">
+      <DependentUpon>TabVacancyList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowUserList.xaml.cs">
+      <DependentUpon>WindowUserList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowDisciplineEdit.xaml.cs">
+      <DependentUpon>WindowDisciplineEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WindowGenericList.xaml.cs">
       <DependentUpon>WindowGenericList.xaml</DependentUpon>
     </Compile>
@@ -143,6 +142,12 @@
     </Compile>
     <Compile Include="Views\WindowTextLineEdit.xaml.cs">
       <DependentUpon>WindowTextLineEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowUserEdit.xaml.cs">
+      <DependentUpon>WindowUserEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowVacancyEdit.xaml.cs">
+      <DependentUpon>WindowVacancyEdit.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -153,25 +158,51 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EntityContext\JobSeekerDbContext.cs" />
+    <Compile Include="Helpers\BaseDialogViewModel.cs" />
+    <Compile Include="Helpers\BaseViewModel.cs" />
+    <Compile Include="Helpers\ValueConverterMarkupBase.cs" />
+    <Compile Include="Interfaces\IAuthService.cs" />
+    <Compile Include="Interfaces\IDbContextProvider.cs" />
+    <Compile Include="Interfaces\IDialogService.cs" />
+    <Compile Include="Interfaces\ILogger.cs" />
+    <Compile Include="Interfaces\ILogMessageBuilder.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WindowLog.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\TabVacancyList.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-
+    <Page Include="Views\WindowUserList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WindowDisciplineEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\WindowGenericList.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\WindowDiscipline.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\WindowPositionEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\WindowTextLineEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WindowUserEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WindowVacancyEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WindowLog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

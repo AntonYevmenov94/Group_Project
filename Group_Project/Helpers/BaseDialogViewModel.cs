@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Group_Project
 {
@@ -14,7 +10,7 @@ namespace Group_Project
         #region Public properties
 
         public string DialogWindowTitle { get; set; }
-        public Action OnConfirm { get; set; } = new Action(() => {});
+        public Action OnConfirm { get; set; } = new Action(() => { });
         public Action OnDismiss { get; set; } = new Action(() => { });
         #endregion
 
@@ -22,12 +18,12 @@ namespace Group_Project
         #region Constructor
 
         public BaseDialogViewModel(
-            IAuthService accountService,
+            IAuthService authService,
             IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
-            ILogMessageBuilder logMessageBuilder) 
-            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
+            ILogMessageBuilder logMessageBuilder)
+            : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
         }
         #endregion

@@ -1,8 +1,8 @@
 ﻿using Autofac;
-using System.Configuration;
-using System.Windows;
 using Group_Project.Services;
+using System.Configuration;
 using System.Reflection;
+using System.Windows;
 
 namespace Group_Project
 {
@@ -38,7 +38,7 @@ namespace Group_Project
             builder.RegisterType<MainWindow>();
 
             IoCContainer = builder.Build();
-            
+
             // резолвить и запустить основное окно приложения
             var appWindow = IoCContainer.Resolve<MainWindow>();
             appWindow.Show();

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Group_Project
 {
@@ -17,7 +13,7 @@ namespace Group_Project
         /// <param name="viewModel">Тип модели-представления</param>
         /// <param name="window">Тип окна</param>
         void Register(Type viewModel, Type window);
-        
+
         /// <summary>
         /// Открыть окно.
         /// </summary>

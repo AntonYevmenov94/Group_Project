@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Group_Project.Services
+﻿namespace Group_Project.Services
 {
-    class AuthService : IAuthService
+    internal class AuthService : IAuthService
     {
         private User loggedUser;
 
@@ -30,7 +24,7 @@ namespace Group_Project.Services
             {
                 return AccountRights.NonAuthenticated;
             }
-                        
+
             switch (userRole.Id)
             {
                 case 1:

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Group_Project.ViewModels
+﻿namespace Group_Project.ViewModels
 {
     public class PositionViewModel : BaseDialogViewModel
     {
@@ -16,13 +10,13 @@ namespace Group_Project.ViewModels
 
 
         public PositionViewModel(
-            IAuthService accountService,
+            IAuthService authService,
             IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
             ILogMessageBuilder logMessageBuilder,
             Position position)
-            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
+            : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
         }
     }

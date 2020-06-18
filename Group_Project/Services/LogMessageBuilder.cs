@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Group_Project.Services
 {
-    class LogMessageBuilder : ILogMessageBuilder
+    internal class LogMessageBuilder : ILogMessageBuilder
     {
         // authService передается единственным экземпляром по всему приложению, для отслеживание текущего пользователя.
         // Поэтому не нужно передавать его отдельным параметром метода.
@@ -36,10 +32,10 @@ namespace Group_Project.Services
                 //добавление пользователя
                 case LogAction.UserCreated:
                     return $"{authService.LoggedUser.Login} создал пользователя {objectOfAction} [{GetFormattedTime()}]";
-                    //удаление пользователя
+                //удаление пользователя
                 case LogAction.UserDeleted:
                     return $"{authService.LoggedUser.Login} удалил пользователя {objectOfAction} [{GetFormattedTime()}]";
-                 //подтвеждение регистрации пользоватля
+                //подтвеждение регистрации пользоватля
                 case LogAction.UserRegistration:
                     return $"{authService.LoggedUser.Login} подтвердил регистрацию пользователя {objectOfAction} [{GetFormattedTime()}]";
                 default:
@@ -57,13 +53,14 @@ namespace Group_Project.Services
                     return $"{authService.LoggedUser.Login} изменил {changedProperty} пользователя {objectOfAction} с '{oldValue}' на '{newValue}' [{GetFormattedTime()}]";
                 //изменение статуса пользователя
                 case LogAction.UserChangedStatus:
-                    {     if (oldValue != newValue)
-                            {
-                                return $"{objectOfAction} прошел техсобеседование [{GetFormattedTime()}]";
-                           
-                            }
-                      return $"{objectOfAction} не прошел техсобеседование [{GetFormattedTime()}]";
+                {
+                    if (oldValue != newValue)
+                    {
+                        return $"{objectOfAction} прошел техсобеседование [{GetFormattedTime()}]";
+
                     }
+                    return $"{objectOfAction} не прошел техсобеседование [{GetFormattedTime()}]";
+                }
                 default:
                     return "no message";
             }

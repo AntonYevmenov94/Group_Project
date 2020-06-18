@@ -53,8 +53,8 @@
                     <Label Content="Человек" FontSize="20" Grid.Column="2" Margin="1.667,0,425.666,0.667" Grid.ColumnSpan="4" />
                     <TextBox Text="Логин"  BorderThickness="3" Margin="0,14.333,47.333,9" Grid.Row="1" />
                     <TextBox Text="ID или ФИО человека" Grid.Column="2"  BorderThickness="3" Margin="1.667,14.333,424.666,9" Grid.Row="1" Grid.ColumnSpan="4"/>
-                    <Button Background="#FF3F51B5" Content="Применить фильтр" Grid.Row="2" Margin="0,29,10.333,30.333" Grid.RowSpan="2" />
-                    <Button Background="#FF3F51B5" Content="Сбросить фильтр" Grid.Row="2" Grid.Column="2" Margin="13.667,29,8.333,30.333" Grid.RowSpan="2"/>
+                    <Button Content="Применить фильтр" Grid.Row="2" Margin="0,29,10.333,30.333" Grid.RowSpan="2" />
+                    <Button Content="Сбросить фильтр" Grid.Row="2" Grid.Column="2" Margin="13.667,29,8.333,30.333" Grid.RowSpan="2"/>
                 </Grid>
             </StackPanel>
 
