@@ -112,6 +112,11 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
+    <Compile Include="Views\WindowDiscipline.xaml.cs">
+      <DependentUpon>WindowDiscipline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowADDPosition.xaml.cs">
+      <DependentUpon>WindowADDPosition.xaml</DependentUpon>
     <Compile Include="ViewModels\AuthPageViewModel.cs" />
     <Compile Include="ViewModels\DisciplineViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
@@ -156,7 +161,9 @@
     </Compile>
     <Page Include="Views\WindowGenericList.xaml">
       <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\WindowDiscipline.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WindowPositionEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
