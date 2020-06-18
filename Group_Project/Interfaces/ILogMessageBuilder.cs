@@ -28,7 +28,7 @@ namespace Group_Project
         string GetLogMessage(LogAction action, string objectOfAction, string changedProperty, string oldValue, string newValue);
 
         /// <summary>
-        /// Получить строку сообщения для действия добавления комментария.
+        /// Получить строку сообщения для действия создания или удаления.
         /// </summary>
         /// <param name="comment">Комментарий.</param>
         /// <returns>Строка сообщения лога.</returns>
@@ -39,7 +39,9 @@ namespace Group_Project
     {
         UserCreated,
         UserDeleted,
-        UserChanged
+        UserChanged,
+        UserRegistration,
+        UserChangedStatus
         // расписать действия здесь
     }
 }
