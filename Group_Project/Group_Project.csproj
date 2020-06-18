@@ -66,6 +66,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
@@ -95,6 +96,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\ValueConverterMarkupBase.cs" />
+    <Compile Include="Interfaces\ILogMessageBuilder.cs" />
+    <Compile Include="Services\DbContextProvider.cs" />
+    <Compile Include="Services\LogMessageBuilder.cs" />
+    <Compile Include="Services\WindowsDialogService.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />
     <Compile Include="VakueConverters\NullToBoolConverter.cs" />
@@ -107,14 +112,40 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
+
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowADDPosition.xaml.cs">
       <DependentUpon>WindowADDPosition.xaml</DependentUpon>
+    <Compile Include="ViewModels\AuthPageViewModel.cs" />
+    <Compile Include="ViewModels\DisciplineViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\PersonViewModel.cs" />
+    <Compile Include="ViewModels\PositionViewModel.cs" />
+    <Compile Include="ViewModels\ResponseViewModel.cs" />
+    <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\TabEmployeesViewModel.cs" />
+    <Compile Include="ViewModels\TabPeopleViewModel.cs" />
+    <Compile Include="ViewModels\TabResponsesViewModel.cs" />
+    <Compile Include="ViewModels\TabVacanciesViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="ViewModels\VacancyViewModel.cs" />
+    <Compile Include="ViewModels\WindowDepartmentListViewModel.cs" />
+    <Compile Include="ViewModels\WindowLogViewModel.cs" />
+    <Compile Include="ViewModels\WindowPositionListViewModel.cs" />
+    <Compile Include="ViewModels\WindowTechListViewModel.cs" />
+    <Compile Include="ViewModels\WindowTextLineEditViewModel.cs" />
+    <Compile Include="ViewModels\WindowUserListViewModel.cs" />
+    <Compile Include="Views\WindowGenericList.xaml.cs">
+      <DependentUpon>WindowGenericList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowPositions.xaml.cs">
-      <DependentUpon>WindowPositions.xaml</DependentUpon>
+    <Compile Include="Views\WindowPositionEdit.xaml.cs">
+      <DependentUpon>WindowPositionEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowTextLineEdit.xaml.cs">
+      <DependentUpon>WindowTextLineEdit.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -129,15 +160,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+
     <Page Include="Views\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowADDPosition.xaml">
-      <SubType>Designer</SubType>
+
+    <Page Include="Views\WindowGenericList.xaml">
       <Generator>MSBuild:Compile</Generator>
+
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="WindowPositions.xaml">
+    <Page Include="Views\WindowPositionEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WindowTextLineEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
