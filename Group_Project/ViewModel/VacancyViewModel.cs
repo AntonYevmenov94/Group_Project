@@ -10,11 +10,10 @@ using System.Windows.Input;
 
 namespace Group_Project.ViewModel
 {
-    public class VacancyAddViewModel : BaseViewModel
+    public class VacancyViewModel : BaseViewModel
     {
         #region Public properties 
         public Vacancy Vacancy { get; set; }
-        public ObservableCollection<Vacancy> Vacancies{ get; set; }
         public ObservableCollection<Discipline> Disciplines { get; set; }
         public ObservableCollection<Technology> Technologies{ get; set; }
 
@@ -23,7 +22,7 @@ namespace Group_Project.ViewModel
         // В параметры требует только параметры конструктора, которые отсутствуют у BaseViewModel.
         // (имена параметров у фабрики и конструктора должны совпадать)
 
-        public delegate VacancyAddViewModel Factory(Vacancy vacancy);
+        public delegate VacancyViewModel Factory(Vacancy vacancy);
 
         public ICommand ArchiveVacancyCommand { get; set; }
         public ICommand AddDisciplineCommand { get; set; }
@@ -31,15 +30,16 @@ namespace Group_Project.ViewModel
         public ICommand NResponseCommand { get; set; }
         public ICommand CreateResponseCommand { get; set; }
 
-        public VacancyAddViewModel(IDbContextProvider dbContextProvider,
+        public VacancyViewModel(
+            IAuthService accountService,
+            IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
-            IAuthService accountService, 
-            Vacancy vacancy) 
-            : base(dbContextProvider,dialogService,logger,accountService)
+            ILogMessageBuilder logMessageBuilder,
+            Vacancy vacancy)
+            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
             this.Vacancy = vacancy;
-            //dbContextProvider
         }
         #endregion
     }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 f:\CommandProjectGroup\Group_Project\Group_Project\App.xaml
-7808461511
+71542747784
 
-52-1873237463
+52-104434021
 28-1117732032
-MainWindow.xaml;Views\WindowAccountsEdit.xaml;Views\WindowUser.xaml;Views\WindowVacancyAdd.xaml;Views\WindowGenericList.xaml;Views\WindowPositionEdit.xaml;Views\TabVacancyList.xaml;
+MainWindow.xaml;Views\UserListWindow.xaml;Views\WindowUser.xaml;Views\WindowVacancyAdd.xaml;Views\WindowGenericList.xaml;Views\WindowPositionEdit.xaml;Views\TabVacancyList.xaml;
 
 True
 

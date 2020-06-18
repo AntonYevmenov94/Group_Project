@@ -25,8 +25,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10">
             <Button Content="Обновить" Command="{Binding RefreshCommand}"
-                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
-                    Background="#FF0057D8"/>
+                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5"/>
         </StackPanel>
               
          <Expander Grid.Row="1" >
@@ -61,11 +60,11 @@
         </Expander>
         <StackPanel Grid.Column="1" Grid.Row="2" Grid.RowSpan="4" Margin="5">
             <Button Content="Открыть" Margin="10" Command="{Binding OpenCommand}" 
-                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5" Background="#FF0057D8"/>
-            <Button Content="Закрыть" Margin="10" Command="{Binding CloseComman}" 
-                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5" Background="#FF0057D8"/>
-            <Button Content="Редактировать" Margin="10" Command="{Binding EditComman}" 
-                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5" Background="#FF0057D8"/>
+                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5" />
+            <Button Content="Закрыть" Margin="10" Command="{Binding CloseCommand}" 
+                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5" />
+            <Button Content="Редактировать" Margin="10" Command="{Binding EditCommand}" 
+                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5" />
         </StackPanel>
         
         <ListBox Grid.Row="2" ScrollViewer.VerticalScrollBarVisibility="Visible" 

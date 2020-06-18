@@ -18,17 +18,14 @@ namespace Group_Project
     /// <summary>
     /// Логика взаимодействия для WindowAccountsUser.xaml
     /// </summary>
-    public partial class WindowAccountsEdit : Window
+    public partial class UserListWindow : Window
     {
-        public WindowAccountsEdit()
+        public UserListWindow()
         {
             InitializeComponent();
             //this.DataContext = new AccountsViewModel();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
     }
 }

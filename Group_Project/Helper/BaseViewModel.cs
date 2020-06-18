@@ -15,27 +15,25 @@ namespace Group_Project.Helper
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private ILogger logger;
-        private IDialogService dialogService;
-        public IDbContextProvider dbContextProvider;
+        protected ILogger logger;
+        protected ILogMessageBuilder logMessageBuilder;
+        protected IDialogService dialogService;
+        protected IDbContextProvider dbContextProvider;
         public IAuthService accountService;
 
         public BaseViewModel(
+            IAuthService accountService,
             IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
-            IAuthService accountService)
+            ILogMessageBuilder logMessageBuilder)
         {
+            this.accountService = accountService;
             this.dbContextProvider = dbContextProvider;
             this.dialogService = dialogService;
             this.logger = logger;
-            this.accountService = accountService;
+            this.logMessageBuilder = logMessageBuilder;
         }
-
-        public BaseViewModel(IDbContextProvider dbContextProvider, IDialogService dialogService)
-        {
-            this.dbContextProvider = dbContextProvider;
-            this.dialogService = dialogService;
-        }
+      
     }
 }

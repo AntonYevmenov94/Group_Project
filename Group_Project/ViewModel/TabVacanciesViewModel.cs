@@ -21,17 +21,18 @@ namespace Group_Project.ViewModel
         public ICommand ApplyFilterCommand { get; set; }
         public ICommand ResetFilterCommand { get; set; }
         public ICommand OpenCommand { get; set; }
-        public ICommand CloseComman { get; set; }
-        public ICommand EditComman { get; set; }
+        public ICommand CloseCommand { get; set; }
+        public ICommand EditCommand { get; set; }
 
 
 
-        public TabVacanciesViewModel(IDbContextProvider dbContextProvider,
+        public TabVacanciesViewModel(
+            IAuthService accountService,
+            IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
-            IAuthService accountService,
-            Vacancy vacancy)
-            : base(dbContextProvider, dialogService, logger, accountService)
+            ILogMessageBuilder logMessageBuilder)
+            : base(accountService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
             
         }

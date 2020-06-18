@@ -48,11 +48,11 @@
                 <ColumnDefinition Width="108*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="1"  Content="Сохранить"  materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
-                    Background="#FF0057D8"  Command="{Binding AddCommand}"
+                    Command="{Binding AddCommand}"
                     Margin="5" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
             <Button Grid.Column="3" Content="Отмена" Command="{Binding CancelCommand}" 
                     materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
-                    Background="#FF0057D8" Margin="5"/>
+                    Margin="5"/>
         </Grid>
 
     </Grid>

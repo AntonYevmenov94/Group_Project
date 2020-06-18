@@ -128,13 +128,13 @@
     <Compile Include="VakueConverters\BoolToVisibilityConverter.cs" />
     <Compile Include="VakueConverters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="VakueConverters\NullToBoolConverter.cs" />
-    <Compile Include="ViewModel\AccountsViewModel.cs" />
+    <Compile Include="ViewModel\WindowUserListViewModel.cs" />
     <Compile Include="ViewModel\WindowPositionListViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
-    <Compile Include="ViewModel\VacancyAddViewModel.cs" />
+    <Compile Include="ViewModel\VacancyViewModel.cs" />
     <Compile Include="ViewModel\TabVacanciesViewModel.cs" />
-    <Compile Include="Views\WindowAccountsEdit.xaml.cs">
-      <DependentUpon>WindowAccountsEdit.xaml</DependentUpon>
+    <Compile Include="Views\UserListWindow.xaml.cs">
+      <DependentUpon>UserListWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WindowPositionEdit.xaml.cs">
       <DependentUpon>WindowPositionEdit.xaml</DependentUpon>
@@ -157,7 +157,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\WindowAccountsEdit.xaml">
+    <Page Include="Views\UserListWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
