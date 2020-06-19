@@ -46,17 +46,23 @@
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Label Content="Login" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" />
-                            <Label Grid.Row="1" Content="Password" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" />
-                            <Label Grid.Row="2" Content="Email" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" />
-                            <Label Grid.Row="3" Content="Role" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" />
+                            <Label Grid.Row="1" Content="Password" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"/>
+                            <Label Grid.Row="2" Content="Email" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"/>
+                            <Label Grid.Row="3" Content="Role" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"/>
 
-                            <TextBox Grid.Column="1" Text="{Binding Login}" BorderBrush="#FF0057D8" BorderThickness="1" Width="215" FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBox Grid.Column="1" Text="{Binding Login}" 
+                                     BorderBrush="#FF0057D8" BorderThickness="1" Width="215" 
+                                     FontStyle="Italic" Margin="5" FontSize="14"
+                                     VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             <TextBox Grid.Column="1" Grid.Row="1" BorderBrush="#FF0057D8" BorderThickness="1" Width="215" 
-                         Text="{Binding Password}"  FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                                     Text="{Binding Password}"  FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" 
+                                     HorizontalAlignment="Left" />
                             <TextBox Grid.Column="1" Grid.Row="2" BorderBrush="#FF0057D8" BorderThickness="1" Width="215"
-                         Text="{Binding Email}" FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                     Text="{Binding Email}" FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" 
+                                     HorizontalAlignment="Left"/>
                             <TextBox Grid.Column="1" Grid.Row="3" 
-                         Text="{Binding Role.Title}" BorderBrush="#FF0057D8" BorderThickness="1" Width="215" FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                     Text="{Binding Role.Title}" BorderBrush="#FF0057D8" BorderThickness="1" Width="215" 
+                                     FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
                             <Button x:Name="btEdit" 
                                     materialDesign:ButtonAssist.CornerRadius="5,5,5,5"

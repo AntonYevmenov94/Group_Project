@@ -53,6 +53,11 @@ namespace Group_Project
             // TODO удалить перед релизом
             // Загрузить инфо из БД, для того, чтобы насильно перестроить структуру и содержимое БД
             IoCContainer.Resolve<IDbContextProvider>().GetDbContext().Persons.Load();
+
+            var resp = new Role();
+            var respVm = IoCContainer.Resolve<UserViewModel>(new NamedParameter("user", resp));
+            var dlgService = IoCContainer.Resolve<IDialogService>();
+            dlgService.Show(respVm);
         }
 
         private void RegisterViewsInDialogService()

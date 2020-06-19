@@ -46,7 +46,7 @@
             </Grid.RowDefinitions>
             <Label Content="Открыта:" Margin="10" FontSize="14"/>
             <TextBlock Grid.Column="1" Text="{Binding StartDate}" Margin="15" FontSize="14"/>
-            <Label Grid.Row="1" Content="Закрыта:" Margin="10" FontSize="14"/>
+            <Label Content="Закрыта:" Margin="10" FontSize="14" Grid.Row="1"  />
             <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding EndDate}" Margin="15" FontSize="14"/>
             <Button x:Name="btArchive" Grid.Column="3" Grid.Row="1"
                     materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
@@ -62,13 +62,15 @@
         <!--<Label Grid.Row="3" Content="Предметы" FontSize="16" Margin="5"/>-->
         <StackPanel Grid.Row="3" Orientation="Horizontal" Grid.ColumnSpan="2">
             <ComboBox Width="400" Height="35" 
-                      materialDesign:HintAssist.Hint="Search" 
-                      materialDesign:HintAssist.HintOpacity=".26" 
+                      materialDesign:HintAssist.Hint="Дисциплина" 
+                      materialDesign:HintAssist.HintOpacity=".40" 
                       IsEditable="True"
                       HorizontalAlignment="Left" Margin="5"
-                      ItemsSource="{Binding Disciplines}">
+                      ItemsSource="{Binding Disciplines}"
+                      Style="{StaticResource MaterialDesignComboBox}"
+                      BorderBrush="#FF0057D8">
                 <ComboBoxItem>
-
+                    <TextBlock Text="{Binding Factory}"/>
                 </ComboBoxItem>
             </ComboBox>
             <Button x:Name="btAddSubject" Width="120" Margin="10"

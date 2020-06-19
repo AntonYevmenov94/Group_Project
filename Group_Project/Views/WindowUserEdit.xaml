@@ -33,15 +33,20 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Content="Login" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"/>
-                <TextBox Grid.Column="1" Margin="5" BorderBrush="#FF0057D8" BorderThickness="2" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="1" Margin="5" BorderBrush="#FF0057D8" BorderThickness="2" VerticalAlignment="Center"
+                         Text="{Binding Login}"/>
                 <Label Grid.Row="1" Content="Password" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"/>
-                <TextBox Text="Must b-20 caracters long" FontSize="14" FontStyle="Italic" Grid.Column="1" Grid.Row="1" Margin="5" BorderBrush="#FF0057D8" BorderThickness="2" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Password}" FontSize="14" FontStyle="Italic" Grid.Column="1" Grid.Row="1" 
+                         Margin="5" BorderBrush="#FF0057D8" BorderThickness="2" VerticalAlignment="Center"/>
                 <Label Grid.Row="2" Content="Email" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"/>
-                <TextBox Text="email@examle.com" FontSize="14" FontStyle="Italic" Grid.Column="1" Grid.Row="2" Margin="5" BorderBrush="#FF0057D8" BorderThickness="2" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Email}" FontSize="14" FontStyle="Italic" Grid.Column="1" Grid.Row="2" 
+                         Margin="5" BorderBrush="#FF0057D8" BorderThickness="2" VerticalAlignment="Center"/>
                 <Label Grid.Row="3" Content="Role" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16"/>
-                <ComboBox Grid.Row="3" Grid.Column="1" Margin="5"
-                          materialDesign:HintAssist.Hint="Search" 
-                          materialDesign:HintAssist.HintOpacity=".24" 
+                <ComboBox Grid.Row="3" Grid.Column="1" Margin="5" ItemsSource="{Binding Roles}"
+                          materialDesign:HintAssist.Hint="Выберите пользователя" 
+                          materialDesign:HintAssist.HintOpacity=".40"
+                          Style="{StaticResource MaterialDesignComboBox}" 
+                          BorderBrush="#FF0057D8"
                           IsEditable="True">
                     <ComboBoxItem>
                         
@@ -62,11 +67,13 @@
             <Button   Grid.Column="1" Margin="5" Content="Сохранить"
                       materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
                       HorizontalAlignment="Right"
-                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="110"/>
+                      VerticalAlignment="Center" VerticalContentAlignment="Center" Width="110"
+                      Command="{Binding SaveCommand}"/>
             <Button   Grid.Column="3" Margin="5" Content="Отмена"
                       materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
                       HorizontalAlignment="Left" VerticalAlignment="Center"
-                      VerticalContentAlignment="Center"  Width="110"/>
+                      VerticalContentAlignment="Center"  Width="110"
+                      Command="{Binding CancelCommand}"/>
         </Grid>
        
     </Grid>
