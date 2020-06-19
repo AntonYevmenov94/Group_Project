@@ -13,7 +13,7 @@ namespace Group_Project.Services
         {
             if (!viewModel.IsSubclassOf(typeof(BaseViewModel)))
                 throw new ArgumentException($"Parameter '{viewModel}' should be inherited from {typeof(BaseViewModel)}.");
-            if (!viewModel.IsSubclassOf(typeof(BaseViewModel)))
+            if (!window.IsSubclassOf(typeof(Window)))
                 throw new ArgumentException($"Parameter '{window}' should be inherited from {typeof(Window)}.");
             if (viewModelToViewRelations.ContainsKey(viewModel))
                 throw new ArgumentException($"View-Model '{viewModel}' is already registered.");

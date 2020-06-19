@@ -38,7 +38,6 @@ namespace Group_Project.ViewModels
             ILogMessageBuilder logMessageBuilder)
             : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
-            this.SelectedVacancy = vacancy;
         }
     }
 }
