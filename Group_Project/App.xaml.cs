@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Windows;
 using Group_Project.Views;
 using Group_Project.ViewModels;
+using System.Data.Entity;
 
 namespace Group_Project
 {
@@ -47,6 +48,11 @@ namespace Group_Project
             // резолвить и запустить основное окно приложения
             var appWindow = IoCContainer.Resolve<MainWindow>();
             appWindow.Show();
+
+            // Тестовое пространство.
+            // TODO удалить перед релизом
+            // Загрузить инфо из БД, для того, чтобы насильно перестроить структуру и содержимое БД
+            IoCContainer.Resolve<IDbContextProvider>().GetDbContext().Persons.Load();
         }
 
         private void RegisterViewsInDialogService()
