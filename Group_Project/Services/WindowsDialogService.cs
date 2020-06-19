@@ -43,16 +43,19 @@ namespace Group_Project.Services
             return sfd.FileName;
         }
 
-        public void Show(BaseDialogViewModel dialogVm, Action onConfirm = null, Action onDismiss = null)
+        public void Show(BaseViewModel dialogVm, Action onConfirm = null, Action onDismiss = null)
         {
             var vmType = dialogVm.GetType();
             if (!viewModelToViewRelations.ContainsKey(vmType))
                 throw new ArgumentException($"View-Model '{dialogVm}' is not registered.");
 
-            if (onConfirm != null)
-                dialogVm.OnConfirm = onConfirm;
-            if (onDismiss != null)
-                dialogVm.OnDismiss = onDismiss;
+            if (dialogVm is BaseDialogViewModel)
+            {
+                if (onConfirm != null)
+                    (dialogVm as BaseDialogViewModel).OnConfirm = onConfirm;
+                if (onDismiss != null)
+                    (dialogVm as BaseDialogViewModel).OnDismiss = onDismiss;
+            }
 
             var winType = viewModelToViewRelations[dialogVm.GetType()];
             var dialogWin = (Window)Activator.CreateInstance(winType);
@@ -60,16 +63,19 @@ namespace Group_Project.Services
             dialogWin.Show();
         }
 
-        public bool? ShowModal(BaseDialogViewModel dialogVm, Action onConfirm = null, Action onDismiss = null)
+        public bool? ShowModal(BaseViewModel dialogVm, Action onConfirm = null, Action onDismiss = null)
         {
             var vmType = dialogVm.GetType();
             if (!viewModelToViewRelations.ContainsKey(vmType))
                 throw new ArgumentException($"View-Model '{dialogVm}' is not registered.");
 
-            if (onConfirm != null)
-                dialogVm.OnConfirm = onConfirm;
-            if (onDismiss != null)
-                dialogVm.OnDismiss = onDismiss;
+            if (dialogVm is BaseDialogViewModel)
+            {
+                if (onConfirm != null)
+                    (dialogVm as BaseDialogViewModel).OnConfirm = onConfirm;
+                if (onDismiss != null)
+                    (dialogVm as BaseDialogViewModel).OnDismiss = onDismiss;
+            }
 
             var winType = viewModelToViewRelations[dialogVm.GetType()];
             var dialogWin = (Window)Activator.CreateInstance(winType);

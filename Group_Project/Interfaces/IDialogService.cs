@@ -19,7 +19,7 @@ namespace Group_Project
         /// </summary>
         /// <param name="onConfirm">Действие, которое должно быть выполнено, если пользователь нажмет Save/Ok/Confirm</param>
         /// <param name="onDismiss">Действие, которое должно быть выполнено, если пользователь нажмет No/Cancel/Отмена</param>
-        void Show(BaseDialogViewModel dialogVm, Action onConfirm = null, Action onDismiss = null);
+        void Show(BaseViewModel dialogVm, Action onConfirm = null, Action onDismiss = null);
 
         /// <summary>
         /// Открыть модальное окно.
@@ -27,7 +27,7 @@ namespace Group_Project
         /// <param name="onConfirm">Действие, которое должно быть выполнено, если пользователь нажмет Save/Ok/Confirm</param>
         /// <param name="onDismiss">Действие, которое должно быть выполнено, если пользователь нажмет No/Cancel/Отмена</param>
         /// <returns>Результат диалога.</returns>
-        bool? ShowModal(BaseDialogViewModel dialogVm, Action onConfirm = null, Action onDismiss = null);
+        bool? ShowModal(BaseViewModel dialogVm, Action onConfirm = null, Action onDismiss = null);
 
 
 
