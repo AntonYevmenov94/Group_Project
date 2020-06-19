@@ -1,5 +1,9 @@
 ﻿namespace Group_Project.ViewModels
 {
+    /// <summary>
+    /// Модель-представления экземпляра сущности <see cref="Discipline"/>.
+    /// Привязывается к окну <see cref=""/>
+    /// </summary>
     public class EmployeeViewModel : BaseDialogViewModel
     {
         // Фабричный метод для создания экземпляров классов, у которых не все зависимости 

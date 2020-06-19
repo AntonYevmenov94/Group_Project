@@ -3,11 +3,15 @@ using System.Windows.Input;
 
 namespace Group_Project.ViewModels
 {
+    /// <summary>
+    /// Модель-представления экземпляра сущности <see cref="Vacancy"/>.
+    /// Привязывается к окну <see cref="Views.WindowVacancyEdit"/>
+    /// </summary>
     public class VacancyViewModel : BaseDialogViewModel
     {
         #region Public properties 
 
-        public Vacancy Vacancy { get; set; }
+        public Vacancy InternalVacancy { get; set; }
         public ObservableCollection<Vacancy> Vacancies { get; set; }
         public ObservableCollection<Discipline> Disciplines { get; set; }
         public ObservableCollection<Technology> Technologies { get; set; }

@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace Group_Project.ViewModels
 {
+    /// <summary>
+    /// Модель-представления экземпляра сущности <see cref="Response"/>.
+    /// Привязывается к окну <see cref="Views.WindowResponseEdit"/>
+    /// </summary>
     public class ResponseViewModel : BaseDialogViewModel
     {
         #region Constructor

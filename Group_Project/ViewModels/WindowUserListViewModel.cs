@@ -3,6 +3,10 @@ using System.Windows.Input;
 
 namespace Group_Project.ViewModels
 {
+    /// <summary>
+    /// Модель-представления предназначенная для работы со списком аккаунтов пользователей программы.
+    /// Привязывается к окну <see cref="Views.WindowUserList"/>
+    /// </summary>
     public class WindowUserListViewModel : BaseViewModel
     {
         public ObservableCollection<User> Users { get; set; }

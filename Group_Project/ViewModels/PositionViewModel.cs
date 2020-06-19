@@ -1,5 +1,9 @@
 ﻿namespace Group_Project.ViewModels
 {
+    /// <summary>
+    /// Модель-представления экземпляра сущности <see cref="Position"/>.
+    /// Привязывается к окну <see cref="Views.WindowPositionEdit"/>
+    /// </summary>
     public class PositionViewModel : BaseDialogViewModel
     {
         // Фабричный метод для создания экземпляров классов, у которых не все зависимости 

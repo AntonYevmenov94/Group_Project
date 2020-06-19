@@ -1,5 +1,9 @@
 ﻿namespace Group_Project.ViewModels
 {
+    /// <summary>
+    /// Модель-представления экземпляра сущности <see cref="Person"/>.
+    /// Привязывается к окну <see cref="Views.WindowPersonEdit"/>
+    /// </summary>
     public class PersonViewModel : BaseDialogViewModel
     {
         // Фабричный метод для создания экземпляров классов, у которых не все зависимости 
