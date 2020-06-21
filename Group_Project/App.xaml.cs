@@ -49,10 +49,20 @@ namespace Group_Project
             var appWindow = IoCContainer.Resolve<MainWindow>();
             appWindow.Show();
 
-            // Тестовое пространство.
+
+            ///////////////////////////
+            // Тестовое пространство //
+            ///////////////////////////
+
             // TODO удалить перед релизом
             // Загрузить инфо из БД, для того, чтобы насильно перестроить структуру и содержимое БД
-            IoCContainer.Resolve<IDbContextProvider>().GetDbContext().Persons.Load();
+            //IoCContainer.Resolve<IDbContextProvider>().GetDbContext().Persons.Load();
+
+            //string s = "This is a message";
+            //var vn = IoCContainer.Resolve<WindowConfirmActionDialogViewModel>(new NamedParameter("messageText", s));
+            //var dlgSrv = IoCContainer.Resolve<IDialogService>();
+            //if (dlgSrv.ShowModal(vn) == true)
+            //    MessageBox.Show("Confirm");
         }
 
         private void RegisterViewsInDialogService()
@@ -74,6 +84,8 @@ namespace Group_Project
                 dialogService.Register(typeof(WindowTechListViewModel), typeof(WindowGenericList));
                 dialogService.Register(typeof(WindowTextLineEditViewModel), typeof(WindowTextLineEdit));
                 dialogService.Register(typeof(WindowUserListViewModel), typeof(WindowUserList));
+                dialogService.Register(typeof(WindowConfirmActionDialogViewModel), typeof(WindowConfirmActionDialog));
+                dialogService.Register(typeof(WindowMessageViewModel), typeof(WindowMessage));
             }
         }
     }
