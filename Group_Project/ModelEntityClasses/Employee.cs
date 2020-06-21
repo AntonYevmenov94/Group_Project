@@ -1,11 +1,14 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Group_Project
 {
     [Table("Employees")]
-    public class Employee
+    public class Employee : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int Id { get; set; }
         public decimal Salary { get; set; }
         public DateTime EmploymentDate { get; set; }
