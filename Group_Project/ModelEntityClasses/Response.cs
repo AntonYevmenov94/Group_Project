@@ -1,11 +1,14 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Group_Project
 {
     [Table("Responses")]
-    public class Response
+    public class Response : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int Id { get; set; }
         public DateTime Time { get; set; }
         public int VacancyId { get; set; }

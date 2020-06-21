@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Group_Project
 {
     [Table("Positions")]
-    public class Position
+    public class Position : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int Id { get; set; }
         public string Title { get; set; }
         public int DepartmentId { get; set; }
