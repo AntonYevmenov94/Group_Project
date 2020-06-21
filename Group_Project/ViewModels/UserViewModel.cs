@@ -31,7 +31,10 @@ namespace Group_Project.ViewModels
             : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
             var db = dbContextProvider.GetDbContext();
-            //this.SelectedUser = user;
+            SelectedUser = db.Users.Find(user.Id);
+            // не біл найжен в БД
+            if (SelectedUser == null)
+                SelectedUser = user;
             db.Roles.Load();
             //Roles = new ObservableCollection<Role>();
             Roles = db.Roles.Local;
@@ -44,10 +47,22 @@ namespace Group_Project.ViewModels
             {
                 return saveCommand ?? (saveCommand = new RelayCommand(obj =>
                 {
-                    infoWindow();
-                    Person person = new Person();
+                    // если id == 0 сущность еще не добавлялась в БД => нужно сначала добавить
+                    if (SelectedUser.Id == 0)
+                    {
+                        dbContextProvider.GetDbContext().Users.Add(SelectedUser);
+                        infoWindow();
+                        //logger.LogAction($"Добавлен пользователь {SelectedUser.Login}");
+                    }
+                    else
+                    {
+                        infoWindow();
+                        //logger.LogAction($"Изменен пользователь ID {SelectedUser.Id}");
+                    }
+                    
+                   
                     dbContextProvider.GetDbContext().SaveChanges();
-                    logger.LogAction(" сахранен пользователь", person);
+                    
                 }));
             }
         }
@@ -62,16 +77,10 @@ namespace Group_Project.ViewModels
             {
                 return cancelCommand ?? (cancelCommand = new RelayCommand(obj =>
                 {
-
-                    Close();
-
+                                      
                 }));
             }
         }
-        private void Close()
-        {
-            this.Close();
-        }
-
+      
     }
 }

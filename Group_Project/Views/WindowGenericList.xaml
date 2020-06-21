@@ -9,8 +9,8 @@
 
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
@@ -21,21 +21,32 @@
             <Label FontSize="18" Content="%bind to view model%" Margin="0,5,5,2"/>
         </DockPanel>
         <DockPanel Grid.Row="1">
-            <ListView ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="DarkGray" BorderThickness="1">
-                <ListView.View>
-                    <GridView>
-                        <!--<GridViewColumn DisplayMemberBinding="{Binding Path=ModelName}"/>-->
+            <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                     BorderBrush="DarkGray" BorderThickness="1"
+                     ItemsSource="{Binding Positions}"
+                     SelectedItem="{Binding SelectedPosition, Mode=TwoWay}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="10" >
+                        
 
-                    </GridView>
-                </ListView.View>
+                                <TextBox Text="{Binding Title}"/>
 
-            </ListView>
+                          
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+               
+                
+            </ListBox>
         </DockPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <Button Margin="10" Content="Добавить" ToolTip="Добавить новую должность" VerticalAlignment="Center" Grid.Row="1"/>
-            <Button Margin="10" Content="Изменить" Grid.Row="2"/>
-            <Button Margin="10" Content="Удалить" Grid.Row="3"/>
+            <Button Margin="10" Grid.Row="1" Command="{Binding AddCommand}">
+                <TextBlock Text="Добавить новую должность" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button>
+            <Button Margin="10" Content="Изменить" Grid.Row="2" Command="{Binding EditCommand}"/>
+            <Button Margin="10" Content="Удалить" Grid.Row="3" Command="{Binding DeleteCommand}"/>
         </StackPanel>
         
     </Grid>

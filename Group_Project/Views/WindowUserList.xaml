@@ -26,7 +26,6 @@
         </Grid.RowDefinitions>
 
         <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" 
-                 x:Name="ltBoxAccount" 
                  Margin="5" BorderThickness="1" 
                  BorderBrush="#FF0057D8"
                  ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser, Mode=TwoWay}">
@@ -52,25 +51,36 @@
 
                             <TextBox Grid.Column="1" Text="{Binding Login}" 
                                      BorderBrush="#FF0057D8" BorderThickness="1" Width="215" 
-                                     FontStyle="Italic" Margin="5" FontSize="14"
+                                     Margin="5" FontSize="14"
                                      VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            <TextBox Grid.Column="1" Grid.Row="1" BorderBrush="#FF0057D8" BorderThickness="1" Width="215" 
-                                     Text="{Binding Password}"  FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" 
+                            <TextBox Grid.Column="1" Text="{Binding Password}" Grid.Row="1" 
+                                     BorderBrush="#FF0057D8" BorderThickness="1" Width="215" 
+                                     Margin="5" FontSize="14" VerticalAlignment="Center" 
                                      HorizontalAlignment="Left" />
-                            <TextBox Grid.Column="1" Grid.Row="2" BorderBrush="#FF0057D8" BorderThickness="1" Width="215"
-                                     Text="{Binding Email}" FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" 
+                            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Email}"
+                                     BorderBrush="#FF0057D8" BorderThickness="1" Width="215"
+                                     Margin="5" FontSize="14" VerticalAlignment="Center" 
                                      HorizontalAlignment="Left"/>
-                            <TextBox Grid.Column="1" Grid.Row="3" 
-                                     Text="{Binding Role.Title}" BorderBrush="#FF0057D8" BorderThickness="1" Width="215" 
-                                     FontStyle="Italic" Margin="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBox Grid.Column="1" Grid.Row="3"  Text="{Binding Role.Title}"
+                                     BorderBrush="#FF0057D8" BorderThickness="1" Width="215" 
+                                     Margin="5" FontSize="14" VerticalAlignment="Center"
+                                     HorizontalAlignment="Left"/>
 
-                            <Button x:Name="btEdit" 
-                                    materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
+                            <Button materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
                                     Grid.Column="2" Width="60"
                                     Command="{Binding DataContext.EditUserCommand, 
-                                    RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                                    RelativeSource={RelativeSource Mode=FindAncestor, 
+                                    AncestorType={x:Type Window}}}"
                                     CommandParameter="{Binding}">   
-                                <materialDesign:PackIcon Kind="PencilAdd"/>
+                                    <materialDesign:PackIcon Kind="PencilAdd"/>
+                            </Button>
+                            <Button materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
+                                    Grid.Column="2" Grid.Row="1" Width="60"
+                                    Command="{Binding DataContext.DeleteUserCommand, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,
+                                    AncestorType={x:Type Window}}}"
+                                    CommandParameter="{Binding}">
+                                    <materialDesign:PackIcon Kind="Delete"/>
                             </Button>
                         </Grid>
                     </Border>
@@ -83,7 +93,6 @@
                      materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
                      Command="{Binding AddUserCommand}"/>
         </StackPanel>
-        <!--ToDo: Must be deleted-->
-        <!--hgjkgh-**********-->
+       
     </Grid>
 </Window>

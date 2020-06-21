@@ -11,5 +11,13 @@ namespace Group_Project.Views
         {
             InitializeComponent();
         }
+
+       
+        private void btSave_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        
     }
 }

@@ -52,12 +52,24 @@ namespace Group_Project
             // Тестовое пространство.
             // TODO удалить перед релизом
             // Загрузить инфо из БД, для того, чтобы насильно перестроить структуру и содержимое БД
-            IoCContainer.Resolve<IDbContextProvider>().GetDbContext().Persons.Load();
+               IoCContainer.Resolve<IDbContextProvider>().GetDbContext().Persons.Load();
 
-            var resp = new Role();
-            var respVm = IoCContainer.Resolve<UserViewModel>(new NamedParameter("user", resp));
+            //var resp = new User();
+            //var respVm = IoCContainer.Resolve<WindowUserListViewModel>();
+            //var dlgService = IoCContainer.Resolve<IDialogService>();
+            //dlgService.Show(respVm);
+
+            //var vac = new Vacancy();
+            //var respVmVacancy = IoCContainer.Resolve<VacancyViewModel>(new NamedParameter("vacancy", vac));
+            //var dlgService = IoCContainer.Resolve<IDialogService>();
+            //dlgService.Show(respVmVacancy);
+
+            var respVmVacancy = IoCContainer.Resolve<WindowPositionListViewModel>();
             var dlgService = IoCContainer.Resolve<IDialogService>();
-            dlgService.Show(respVm);
+            dlgService.Show(respVmVacancy);
+
+            //WindowUserList wn = new WindowUserList();
+            //wn.Show();
         }
 
         private void RegisterViewsInDialogService()

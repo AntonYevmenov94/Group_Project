@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Group_Project.Views"
         mc:Ignorable="d"
         Title="Редактирование должности" Height="300" Width="390">
@@ -17,19 +18,23 @@
 
         <StackPanel Margin="5" Orientation="Vertical" Grid.Row="0">
             <Label Content="Отдел" FontSize="16"/>
-            <ComboBox x:Name="cbNamePos" HorizontalAlignment="Stretch" Margin="0 5" Style="{StaticResource MaterialDesignComboBox}" BorderBrush="#FF0057D8">
-                <ComboBoxItem  Content="MAK"/>
-                <ComboBoxItem  Content="2"/>
-                <ComboBoxItem  Content="3"/>
+            <ComboBox Text="{Binding Departments}"
+                      SelectedItem="{Binding SelectedDepartment.Department}"
+                      DisplayMemberPath="Title"
+                      HorizontalAlignment="Stretch" Margin="5" 
+                      Style="{StaticResource MaterialDesignComboBox}"
+                      materialDesign:HintAssist.Hint="Выберите отдел" 
+                      materialDesign:HintAssist.HintOpacity=".40"
+                      BorderBrush="#FF0057D8" IsEditable="True">
             </ComboBox>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Vertical" Margin="5">
             <Label Content="Название должности" FontSize="16"/>
-            <TextBox x:Name="tbInputNamePos" Margin="0 5" HorizontalAlignment="Stretch" 
-                     FontSize="16"
+            <TextBox Margin="0 5" HorizontalAlignment="Stretch" 
                      Style="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" 
-                     BorderBrush="#FF0057D8" BorderThickness="2" Panel.ZIndex="2"/>
+                     BorderBrush="#FF0057D8" BorderThickness="2" Panel.ZIndex="2"
+                     Text="{Binding Title}"/>
         </StackPanel>
 
         <Grid Grid.Row="3">
@@ -40,9 +45,13 @@
             </Grid.ColumnDefinitions>
 
             <Button x:Name="btSave" Grid.Column="0" Content="Сохранить" Margin="10" Width="110" 
-                       HorizontalAlignment="Center"/>
+                       HorizontalAlignment="Center"
+                       Command="{Binding SaveCommand}" 
+                    Click="btSave_Click_1"/>
 
-            <Button Grid.Column="2" Content="Отмена" HorizontalAlignment="Center" Margin="10" Width="110"/>
+            <Button Grid.Column="2" Content="Отмена" HorizontalAlignment="Center"
+                    Margin="10" Width="110"
+                    Command="{Binding CancelCommand}" Click="btSave_Click_1"/>
 
 
         </Grid>

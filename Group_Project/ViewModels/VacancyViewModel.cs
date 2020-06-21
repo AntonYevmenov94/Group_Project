@@ -12,6 +12,7 @@ namespace Group_Project.ViewModels
     public class VacancyViewModel : BaseDialogViewModel
     {
         #region Public properties 
+        private VacancyViewModel.Factory VacancyVmFactory; 
 
         public Vacancy InternalVacancy { get; set; }
         public ObservableCollection<Vacancy> Vacancies { get; set; }
@@ -36,18 +37,17 @@ namespace Group_Project.ViewModels
             IDialogService dialogService,
             ILogger logger,
             ILogMessageBuilder logMessageBuilder,
-            Vacancy vacancy)
+            Vacancy vacancy,
+            VacancyViewModel.Factory vacancyVmFactory)
             : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
             
             var db = dbContextProvider.GetDbContext();
             this.InternalVacancy = vacancy;
+            this.VacancyVmFactory = vacancyVmFactory;
             db.Vacancies.Load();
             db.Disciplines.Load();
             db.Technologies.Load();
-            Vacancies = new ObservableCollection<Vacancy>();
-            Disciplines = new ObservableCollection<Discipline>();
-            Technologies = new ObservableCollection<Technology>();
             Vacancies = db.Vacancies.Local;
             Disciplines = db.Disciplines.Local;
             Technologies = db.Technologies.Local;
@@ -68,7 +68,7 @@ namespace Group_Project.ViewModels
                     if (InternalVacancy!=null)
                     {
                         InternalVacancy.Archived = true;
-                        logger.LogAction($"Вакансия перенесина в Архив {InternalVacancy.Id}");
+                        //logger.LogAction($"Вакансия перенесина в Архив {InternalVacancy.Id}");
                     }
                     VacancyStatusArchived();
                 }));
@@ -84,7 +84,7 @@ namespace Group_Project.ViewModels
         {
             get
             {
-                return archiveVacancyCommand ?? (archiveVacancyCommand = new RelayCommand(obj =>
+                return addDisciplineCommand ?? (addDisciplineCommand = new RelayCommand(obj =>
                 {
                     Discipline discipline = new Discipline();
                     dbContextProvider.GetDbContext().Disciplines.Add(discipline);
@@ -97,7 +97,7 @@ namespace Group_Project.ViewModels
         {
             get
             {
-                return archiveVacancyCommand ?? (archiveVacancyCommand = new RelayCommand(obj =>
+                return backVacancyCommand ?? (backVacancyCommand = new RelayCommand(obj =>
                 {
                     if (InternalVacancy != null)
                     {

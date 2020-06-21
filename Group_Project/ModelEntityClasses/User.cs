@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Group_Project
 {
     [Table("Users")]
-    public class User
+    public class User : INotifyPropertyChanged
     {
         public int Id { get; set; }
         public string Login { get; set; }
@@ -14,5 +15,6 @@ namespace Group_Project
         [ForeignKey(nameof(RolesId))]
         public virtual Role Role { get; set; }
 
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

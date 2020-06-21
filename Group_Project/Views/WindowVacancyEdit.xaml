@@ -68,10 +68,11 @@
                       HorizontalAlignment="Left" Margin="5"
                       ItemsSource="{Binding Disciplines}"
                       Style="{StaticResource MaterialDesignComboBox}"
+                      DisplayMemberPath="Title"
                       BorderBrush="#FF0057D8">
-                <ComboBoxItem>
+                <!--<ComboBoxItem>
                     <TextBlock Text="{Binding Factory}"/>
-                </ComboBoxItem>
+                </ComboBoxItem>-->
             </ComboBox>
             <Button x:Name="btAddSubject" Width="120" Margin="10"
                     materialDesign:ButtonAssist.CornerRadius="5,5,5,5"
