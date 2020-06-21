@@ -345,5 +345,6 @@
     <Error Condition="!Exists('packages\Fody.6.2.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.6.2.0\build\Fody.targets'))" />
   </Target>
   <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Fody.6.2.0\build\Fody.targets" Condition="Exists('packages\Fody.6.2.0\build\Fody.targets')" />
   <Import Project="packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />
 </Project>
