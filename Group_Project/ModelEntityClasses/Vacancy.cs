@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Group_Project
 {
     [Table("Vacancies")]
-    public class Vacancy
+    public class Vacancy : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int Id { get; set; }
         public string Title { get; set; }
         public bool Archived { get; set; }

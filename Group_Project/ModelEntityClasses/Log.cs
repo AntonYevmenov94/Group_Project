@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Group_Project
@@ -6,6 +7,8 @@ namespace Group_Project
     [Table("Logs")]
     public class Log
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int Id { get; set; }
         public string Message { get; set; }
 

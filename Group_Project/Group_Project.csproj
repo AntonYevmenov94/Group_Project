@@ -125,10 +125,12 @@
     <Compile Include="ViewModels\WindowDepartmentListViewModel.cs" />
     <Compile Include="ViewModels\WindowDisciplineListViewModel.cs" />
     <Compile Include="ViewModels\WindowLogViewModel.cs" />
+    <Compile Include="ViewModels\WindowMessageViewModel.cs" />
     <Compile Include="ViewModels\WindowPositionListViewModel.cs" />
     <Compile Include="ViewModels\WindowTechListViewModel.cs" />
     <Compile Include="ViewModels\WindowTextLineEditViewModel.cs" />
     <Compile Include="ViewModels\WindowUserListViewModel.cs" />
+    <Compile Include="ViewModels\WindowConfirmActionDialogViewModel.cs" />
     <Compile Include="Views\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
@@ -153,6 +155,9 @@
     <Compile Include="Views\TabVacancies.xaml.cs">
       <DependentUpon>TabVacancies.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\WindowConfirmActionDialog.xaml.cs">
+      <DependentUpon>WindowConfirmActionDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WindowDisciplineEdit.xaml.cs">
       <DependentUpon>WindowDisciplineEdit.xaml</DependentUpon>
     </Compile>
@@ -161,6 +166,9 @@
     </Compile>
     <Compile Include="Views\WindowLog.xaml.cs">
       <DependentUpon>WindowLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowMessage.xaml.cs">
+      <DependentUpon>WindowMessage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WindowPersonEdit.xaml.cs">
       <DependentUpon>WindowPersonEdit.xaml</DependentUpon>
@@ -219,6 +227,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\WindowConfirmActionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\WindowDisciplineEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -230,6 +242,10 @@
     <Page Include="Views\WindowLog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WindowMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WindowPersonEdit.xaml">
       <Generator>MSBuild:Compile</Generator>

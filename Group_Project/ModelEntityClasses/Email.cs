@@ -1,10 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Group_Project
 {
     [Table("Emails")]
-    public class Email
+    public class Email : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int Id { get; set; }
         public string Address { get; set; }
         public int PersonId { get; set; }
