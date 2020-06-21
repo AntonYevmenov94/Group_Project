@@ -45,8 +45,18 @@ namespace Group_Project
             RegisterViewsInDialogService();
 
             // резолвить и запустить основное окно приложения
-            var appWindow = IoCContainer.Resolve<MainWindow>();
-            appWindow.Show();
+            // var appWindow = IoCContainer.Resolve<MainWindow>();
+            // appWindow.Show();
+
+            var resp = new Response();
+            var respVm = IoCContainer.Resolve<ResponseViewModel>(new NamedParameter("response", resp));
+            var dlgService = IoCContainer.Resolve<IDialogService>();
+            dlgService.Show(respVm);
+
+            //var resp = new Employee();
+            //var respVm = IoCContainer.Resolve<EmployeeViewModel>(new NamedParameter("employee", resp));
+            //var dlgService = IoCContainer.Resolve<IDialogService>();
+            //dlgService.Show(respVm);
         }
 
         private void RegisterViewsInDialogService()
@@ -54,8 +64,8 @@ namespace Group_Project
             using (var scope = IoCContainer.BeginLifetimeScope())
             {
                 var dialogService = scope.Resolve<IDialogService>();
-                dialogService.Register(typeof(DisciplineViewModel), typeof(WindowDisciplineEdit));
-                //dialogService.Register(typeof(EmployeeViewModel), typeof());
+                dialogService.Register(typeof(DisciplineViewModel), typeof(WindowDisciplineEdit)); 
+                dialogService.Register(typeof(EmployeeViewModel), typeof(WindowEmployeeEdit));
                 dialogService.Register(typeof(PersonViewModel), typeof(WindowPersonEdit));
                 dialogService.Register(typeof(PositionViewModel), typeof(WindowPositionEdit));
                 dialogService.Register(typeof(ResponseViewModel), typeof(WindowResponseEdit));

@@ -12,10 +12,10 @@ namespace Group_Project
 
             // Использовать этот инициализатор, если нет необходимости пересоздавать БД
             // TODO в релизе оставить только этот инициализатор!
-            Database.SetInitializer(new SeedInitilizer());
+            //Database.SetInitializer(new SeedInitilizer());
 
             // Использовать этот иницилизатор, если нужно пересоздать БД. ДАННЫЕ БУДУТ УДАЛЕНЫ
-            //Database.SetInitializer(new SeedInitilizerAlwaysRecreateDb());
+            Database.SetInitializer(new SeedInitilizerAlwaysRecreateDb());
         }
 
         public DbSet<Comment> Comments { get; set; }
@@ -124,44 +124,44 @@ namespace Group_Project
 
             var disciplines = new List<Discipline>
             {
-                new Discipline(){Title="Discipline1"},
-                new Discipline(){Title="Discipline2"},
-                new Discipline(){Title="Discipline3"},
+                new Discipline(){Title="Discipline1", Vacancies=vacancies},
+                new Discipline(){Title="Discipline2", Vacancies=vacancies},
+                new Discipline(){Title="Discipline3", Vacancies=vacancies},
             };
             context.Disciplines.AddRange(disciplines);
             context.SaveChanges();
 
             var technologies = new List<Technology>
             {
-                new Technology(){Title="Technology1"},
-                new Technology(){Title="Technology2"},
-                new Technology(){Title="Technology3"},
-                new Technology(){Title="Technology4"}
+                new Technology(){Title="Technology1", Disciplines=disciplines},
+                new Technology(){Title="Technology2", Disciplines=disciplines},
+                new Technology(){Title="Technology3", Disciplines=disciplines},
+                new Technology(){Title="Technology4", Disciplines=disciplines}
             };
             context.Technologies.AddRange(technologies);
             context.SaveChanges();
 
             var persons = new List<Person>
             {
-                new Person(){Name="Name1", Surname="Surname1", Patronymic="Patronymic1", Age=18, SexId=1, StatusId=1, Experience="Experience1", Education="Education1", Stars=1},
-                new Person(){Name="Name2", Surname="Surname2", Patronymic="Patronymic2", Age=22, SexId=1, StatusId=2,
+                new Person(){Name="Name1", Surname="Surname1", Patronymic="Patronymic1", DateOfBirth=DateTime.Now, SexId=1, StatusId=1, Experience="Experience1", Education="Education1", Stars=1},
+                new Person(){Name="Name2", Surname="Surname2", Patronymic="Patronymic2", DateOfBirth=DateTime.Now, SexId=1, StatusId=2,
                     Experience="Тест на длину Тест на длину Тест на длину Тест на длину Тест на длину "+
                 "Тест на длину Тест на длину Тест на длину Тест на длину Тест на длину Тест на длину",
                     Education="Тест на длину Тест на длину Тест на длину Тест на длину Тест на длину "+
                 "Тест на длину Тест на длину Тест на длину Тест на длину Тест на длину Тест на длину", Stars=2},
-                new Person(){Name="Name3", Surname="Surname3", Patronymic="Patronymic3", Age=16, SexId=2, StatusId=3, Experience="Experience3", Education="Education3", Stars=3},
-                new Person(){Name="Name4", Surname="Surname4", Patronymic="Patronymic4", Age=31, SexId=2, StatusId=4, Experience="Experience4", Education="Education4", Stars=4},
-                new Person(){Name="Name5", Surname="Surname5", Patronymic="Patronymic5", Age=41, SexId=3, StatusId=5, Experience="Experience5", Education="Education5", Stars=5},
-                new Person(){Name="Name6", Surname="Surname6", Patronymic="Patronymic6", Age=55, SexId=3, StatusId=5, Experience="Experience6", Education="Education6", Stars=5},
-                new Person(){Name="Name7", Surname="Surname7", Patronymic="Patronymic7", Age=19, SexId=3, StatusId=5, Experience="Experience7", Education="Education7", Stars=5},
-                new Person(){Name="Name8", Surname="Surname8", Patronymic="Patronymic8", Age=15, SexId=3, StatusId=5, Experience="Experience8", Education="Education8", Stars=5},
-                new Person(){Name="Name9", Surname="Surname9", Patronymic="Patronymic9", Age=74, SexId=3, StatusId=5, Experience="Experience9", Education="Education9", Stars=5},
-                new Person(){Name="Name10", Surname="Surname10", Patronymic="Patronymic10", Age=53, SexId=3, StatusId=5, Experience="Experience10", Education="Education10", Stars=5},
-                new Person(){Name="Name11", Surname="Surname11", Patronymic="Patronymic11", Age=44, SexId=3, StatusId=5, Experience="Experience11", Education="Education11", Stars=5},
-                new Person(){Name="Name12", Surname="Surname12", Patronymic="Patronymic12", Age=33, SexId=3, StatusId=5, Experience="Experience12", Education="Education12", Stars=5},
-                new Person(){Name="Name13", Surname="Surname13", Patronymic="Patronymic13", Age=32, SexId=3, StatusId=5, Experience="Experience13", Education="Education13", Stars=5},
-                new Person(){Name="Name14", Surname="Surname14", Patronymic="Patronymic14", Age=36, SexId=3, StatusId=5, Experience="Experience14", Education="Education14", Stars=5},
-                new Person(){Name="Name15", Surname="Surname15", Patronymic="Patronymic15", Age=27, SexId=3, StatusId=5, Experience="Experience15", Education="Education15", Stars=5}
+                new Person(){Name="Name3", Surname="Surname3", Patronymic="Patronymic3", DateOfBirth=DateTime.Now.Date, SexId=2, StatusId=3, Experience="Experience3", Education="Education3", Stars=3},
+                new Person(){Name="Name4", Surname="Surname4", Patronymic="Patronymic4", DateOfBirth=DateTime.Now, SexId=2, StatusId=4, Experience="Experience4", Education="Education4", Stars=4},
+                new Person(){Name="Name5", Surname="Surname5", Patronymic="Patronymic5", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience5", Education="Education5", Stars=5},
+                new Person(){Name="Name6", Surname="Surname6", Patronymic="Patronymic6", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience6", Education="Education6", Stars=5},
+                new Person(){Name="Name7", Surname="Surname7", Patronymic="Patronymic7", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience7", Education="Education7", Stars=5},
+                new Person(){Name="Name8", Surname="Surname8", Patronymic="Patronymic8", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience8", Education="Education8", Stars=5},
+                new Person(){Name="Name9", Surname="Surname9", Patronymic="Patronymic9", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience9", Education="Education9", Stars=5},
+                new Person(){Name="Name10", Surname="Surname10", Patronymic="Patronymic10", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience10", Education="Education10", Stars=5},
+                new Person(){Name="Name11", Surname="Surname11", Patronymic="Patronymic11", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience11", Education="Education11", Stars=5},
+                new Person(){Name="Name12", Surname="Surname12", Patronymic="Patronymic12", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience12", Education="Education12", Stars=5},
+                new Person(){Name="Name13", Surname="Surname13", Patronymic="Patronymic13", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience13", Education="Education13", Stars=5},
+                new Person(){Name="Name14", Surname="Surname14", Patronymic="Patronymic14", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience14", Education="Education14", Stars=5},
+                new Person(){Name="Name15", Surname="Surname15", Patronymic="Patronymic15", DateOfBirth=DateTime.Now, SexId=3, StatusId=5, Experience="Experience15", Education="Education15", Stars=5}
             };
             context.Persons.AddRange(persons);
             context.SaveChanges();

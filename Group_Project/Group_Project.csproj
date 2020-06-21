@@ -135,6 +135,12 @@
     <Compile Include="Views\Controls\PersonView.xaml.cs">
       <DependentUpon>PersonView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Controls\ResponseView.xaml.cs">
+      <DependentUpon>ResponseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\EmployeeView.xaml.cs">
+      <DependentUpon>EmployeeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -155,6 +161,9 @@
     </Compile>
     <Compile Include="Views\WindowDisciplineEdit.xaml.cs">
       <DependentUpon>WindowDisciplineEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowEmployeeEdit.xaml.cs">
+      <DependentUpon>WindowEmployeeEdit.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WindowGenericList.xaml.cs">
       <DependentUpon>WindowGenericList.xaml</DependentUpon>
@@ -195,6 +204,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Controls\ResponseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Controls\EmployeeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -222,6 +239,10 @@
     <Page Include="Views\WindowDisciplineEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WindowEmployeeEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WindowGenericList.xaml">
       <Generator>MSBuild:Compile</Generator>
