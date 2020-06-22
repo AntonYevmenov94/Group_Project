@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Group_Project"
+        xmlns:convert="clr-namespace:Group_Project.Converters"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -15,6 +16,14 @@
         Title="MainWindow" Height="450" Width="800">
     
     <Grid>
-        
+        <!--DataContext устанавливается на ViewModel выбранной страницы, чтобы она сразу унаследовала его
+        как свой DataContext-->
+        <ContentControl 
+            DataContext="{Binding AppPageNavService.ActivePageViewModel}"
+            Content="{Binding DataContext.AppPageNavService.ActiveAppPage, 
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, 
+            Converter={convert:AppPageToViewConverter}}">
+
+        </ContentControl>
     </Grid>
 </Window>

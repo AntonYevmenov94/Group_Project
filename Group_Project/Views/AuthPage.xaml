@@ -10,8 +10,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <!--DataContext - AuthPageViewModel-->
-    <Grid DataContext="{Binding AppPageSelector.AppPageViewModel}"
-          Background="{DynamicResource PrimaryHueDarkBrush}">
+    <Grid Background="{DynamicResource PrimaryHueDarkBrush}">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <materialDesign:Card
                 Margin="50 50 50 50"
@@ -78,7 +77,7 @@
                         HorizontalAlignment="Center"
                         Margin="5 30 5 0" 
                         Width="100"
-                        Command="{Binding LoginCmd}"/>
+                        Command="{Binding CmdLogin}"/>
                 </StackPanel>
             </materialDesign:Card>
         </ScrollViewer>

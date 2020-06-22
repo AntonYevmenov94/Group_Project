@@ -7,14 +7,18 @@
     /// </summary>
     public class ShellViewModel : BaseViewModel
     {
+        public IAppPageNavService AppPageNavService { get; set; }
+
         public ShellViewModel(
             IAuthService authService,
             IDbContextProvider dbContextProvider,
             IDialogService dialogService,
             ILogger logger,
-            ILogMessageBuilder logMessageBuilder)
+            ILogMessageBuilder logMessageBuilder,
+            IAppPageNavService appPageNavService)
             : base(authService, dbContextProvider, dialogService, logger, logMessageBuilder)
         {
+            AppPageNavService = appPageNavService;
         }
     }
 }

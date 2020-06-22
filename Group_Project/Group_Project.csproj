@@ -99,15 +99,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\AppPageNavService.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DbContextProvider.cs" />
+    <Compile Include="Interfaces\IAppPageNavService.cs" />
+    <Compile Include="Services\IoCContainerProvider.cs" />
     <Compile Include="Services\Logger.cs" />
     <Compile Include="Services\LogMessageBuilder.cs" />
     <Compile Include="Services\WindowsDialogService.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
+    <Compile Include="ValueConverters\AppPageToViewConverter.cs" />
     <Compile Include="ValueConverters\BoolToVisibilityConverter.cs" />
     <Compile Include="ValueConverters\BoolToVisibilityInvertConverter.cs" />
     <Compile Include="ValueConverters\NullToBoolConverter.cs" />
+    <Compile Include="ValueConverters\TabViewModelToViewConverter.cs" />
     <Compile Include="ViewModels\AuthPageViewModel.cs" />
     <Compile Include="ViewModels\DisciplineViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />

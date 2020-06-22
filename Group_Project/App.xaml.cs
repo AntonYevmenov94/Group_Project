@@ -31,7 +31,8 @@ namespace Group_Project
             builder.RegisterType<WindowsDialogService>().As<IDialogService>().SingleInstance();
             builder.RegisterType<Logger>().As<ILogger>();
             builder.RegisterType<LogMessageBuilder>().As<ILogMessageBuilder>();
-
+            builder.RegisterType<AppPageNavService>().As<IAppPageNavService>().SingleInstance();
+            
             // view-models
             var asm = Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(asm)
@@ -41,9 +42,13 @@ namespace Group_Project
             builder.RegisterType<MainWindow>();
 
             IoCContainer = builder.Build();
+            // сохранить контейнер в статическом классе для доступа по всей программе
+            IoCContainerProvider.Container = IoCContainer; 
 
             // регистрация компонентов в IDialogService
             RegisterViewsInDialogService();
+            // установка стартовой страницы и её VM
+            IoCContainer.Resolve<IAppPageNavService>().ActiveAppPage = AppPage.AuthPage;
 
             // резолвить и запустить основное окно приложения
             var appWindow = IoCContainer.Resolve<MainWindow>();

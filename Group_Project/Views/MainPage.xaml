@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Group_Project.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:convert="clr-namespace:Group_Project.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -43,31 +44,44 @@
                             Content="Лог"/>
                         <Separator/>
                         <Button
-                            Content="Выход"/>
+                            Content="Выход"
+                            Command="{Binding CmdLogout}"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
 
                 <!--Вкладки-->
                 <RadioButton
                     Style="{StaticResource MaterialDesignTabRadioButton}"
-                    IsChecked="True"
+                    IsChecked="{Binding IsTabVacanciesActive}"
                     Content="Вакансии"/>
                 <RadioButton
                     Style="{StaticResource MaterialDesignTabRadioButton}"
-                    IsChecked="False"
+                    IsChecked="{Binding IsTabResponsesActive}"
                     Content="Отклики"/>
                 <RadioButton
                     Style="{StaticResource MaterialDesignTabRadioButton}"
-                    IsChecked="False"
+                    IsChecked="{Binding IsTabEmployeesActive}"
                     Content="Сотрудники"/>
                 <RadioButton
                     Style="{StaticResource MaterialDesignTabRadioButton}"
-                    IsChecked="False"
+                    IsChecked="{Binding IsTabPeopleActive}"
                     Content="Люди"/>
             </StackPanel>
         </materialDesign:ColorZone>
 
+        
         <!--Контент вкладки-->
-        <ContentControl Grid.Row="1"/>
+        
+        <!--DataContext устанавливается на ViewModel выбранной страницы, чтобы она сразу унаследовала его
+        как свой DataContext-->
+        <ContentControl 
+            Grid.Row="1"
+            DataContext="{Binding ActiveTabViewModel}"
+            Content="{Binding DataContext.ActiveTabViewModel, 
+            RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, 
+            Converter={convert:TabViewModelToViewConverter}}">
+            
+        </ContentControl>
+        
     </Grid>
 </UserControl>
