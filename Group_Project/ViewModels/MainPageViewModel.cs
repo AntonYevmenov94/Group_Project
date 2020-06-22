@@ -54,6 +54,12 @@ namespace Group_Project.ViewModels
         // команды
         #region Commands
 
+        public ICommand CmdShowTechWindow { get; set; }
+        public ICommand CmdShowDisciplinesWindow { get; set; }
+        public ICommand CmdShowDepartmentsWindow { get; set; }
+        public ICommand CmdShowPositionsWindow { get; set; }
+        public ICommand CmdShowUsersWindow { get; set; }
+        public ICommand CmdShowLogWindow { get; set; }
         public ICommand CmdLogout { get; set; }
         #endregion
         #endregion
@@ -78,12 +84,60 @@ namespace Group_Project.ViewModels
         {
             AppPageNavService = appPageNavService;
 
+            CmdShowTechWindow = new RelayCommand(new Action<object>(ShowTechWindow));
+            CmdShowDisciplinesWindow = new RelayCommand(new Action<object>(ShowDisciplinesWindow));
+            CmdShowDepartmentsWindow = new RelayCommand(new Action<object>(ShowDepartmentsWindow));
+            CmdShowPositionsWindow = new RelayCommand(new Action<object>(ShowPositionsWindow));
+            CmdShowUsersWindow = new RelayCommand(new Action<object>(ShowUsersWindow));
+            CmdShowLogWindow = new RelayCommand(new Action<object>(ShowLogWindow));
             CmdLogout = new RelayCommand(new Action<object>(Logout));
         }
         #endregion
 
 
         #region Command implementation
+
+        private void ShowTechWindow (object obj)
+        {
+            var ioc = Services.IoCContainerProvider.Container;
+            var windowVm = ioc.Resolve<WindowTechListViewModel>();
+            dialogService.Show(windowVm);
+        }
+
+        private void ShowDisciplinesWindow(object obj)
+        {
+            var ioc = Services.IoCContainerProvider.Container;
+            var windowVm = ioc.Resolve<WindowDisciplineListViewModel>();
+            dialogService.Show(windowVm);
+        }
+
+        private void ShowDepartmentsWindow(object obj)
+        {
+            var ioc = Services.IoCContainerProvider.Container;
+            var windowVm = ioc.Resolve<WindowDepartmentListViewModel>();
+            dialogService.Show(windowVm);
+        }
+
+        private void ShowPositionsWindow(object obj)
+        {
+            var ioc = Services.IoCContainerProvider.Container;
+            var windowVm = ioc.Resolve<WindowPositionListViewModel>();
+            dialogService.Show(windowVm);
+        }
+
+        private void ShowUsersWindow(object obj)
+        {
+            var ioc = Services.IoCContainerProvider.Container;
+            var windowVm = ioc.Resolve<WindowUserListViewModel>();
+            dialogService.Show(windowVm);
+        }
+
+        private void ShowLogWindow(object obj)
+        {
+            var ioc = Services.IoCContainerProvider.Container;
+            var windowVm = ioc.Resolve<WindowLogViewModel>();
+            dialogService.Show(windowVm);
+        }
 
         private void Logout(object obj)
         {

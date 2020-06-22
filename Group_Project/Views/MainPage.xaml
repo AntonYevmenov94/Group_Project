@@ -10,78 +10,107 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
 
-        <!--Page header-->
-        <materialDesign:ColorZone Mode="PrimaryDark" Grid.Row="0">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel.Resources>
-                    <Style TargetType="RadioButton">
-                        <Setter Property="Margin" Value="2"/>
-                    </Style>
-                </StackPanel.Resources>
+        <materialDesign:DrawerHost IsLeftDrawerOpen="False">
+            <!--Выезжающее меню-->
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <DockPanel MinWidth="180">
+                    <Button 
+                        DockPanel.Dock="Top"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        HorizontalAlignment="Right"
+                        Margin="5"
+                        Padding="0"
+                        Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Width="30" Height="30"/>
+                    </Button>
+                    <ScrollViewer HorizontalContentAlignment="Stretch">
+                        <ScrollViewer.Resources>
+                            <Style TargetType="ScrollBar" BasedOn="{StaticResource MaterialDesignScrollBarMinimal}"/>
+                        </ScrollViewer.Resources>
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel.Resources>
+                                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatButton}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                                    <Setter Property="Padding" Value="20 0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                            <Button Content="Технологии" Command="{Binding CmdShowTechWindow}"/>
+                            <Button Content="Предметы" Command="{Binding CmdShowDisciplinesWindow}"/>
+                            <Button Content="Должности" Command="{Binding CmdShowPositionsWindow}"/>
+                            <Button Content="Отделы" Command="{Binding CmdShowDepartmentsWindow}"/>
+                            <Button Content="Аккаунты" Command="{Binding CmdShowUsersWindow}"/>
+                            <Separator/>
+                            <Button Content="Лог" Command="{Binding CmdShowLogWindow}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </DockPanel>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+
+            <!--Контент страницы-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
                 
-                <!--Выпадающее меню-->
-                <materialDesign:PopupBox
-                    Style="{StaticResource MaterialDesignToolPopupBox}"
-                    Padding="2 0 2 0">
-                    <StackPanel>
+                <!--Page header-->
+                <materialDesign:ColorZone Mode="PrimaryDark" Grid.Row="0">
+                    <DockPanel LastChildFill="False">
+                    <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="RadioButton" BasedOn="{StaticResource MaterialDesignTabRadioButton}">
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Style>
+                        </StackPanel.Resources>
+
                         <Button
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            Padding="5 0"
+                            Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                            Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                            CommandParameter="{x:Static Dock.Left}">
+                            <materialDesign:PackIcon Kind="HamburgerMenu" Height="26" Width="26"/>
+                        </Button>
+                        
+                        <!--Вкладки-->
+                        <RadioButton
+                            IsChecked="{Binding IsTabVacanciesActive}"
                             Content="Вакансии"/>
-                        <Button
+                        <RadioButton
+                            IsChecked="{Binding IsTabResponsesActive}"
                             Content="Отклики"/>
-                        <Button
+                        <RadioButton
+                            IsChecked="{Binding IsTabEmployeesActive}"
                             Content="Сотрудники"/>
-                        <Button
+                            <RadioButton
+                            IsChecked="{Binding IsTabPeopleActive}"
                             Content="Люди"/>
-                        <Separator/>
-                        <Button
-                            Content="Управление аккаунтами"/>
-                        <Button
-                            Content="Лог"/>
-                        <Separator/>
-                        <Button
-                            Content="Выход"
-                            Command="{Binding CmdLogout}"/>
-                    </StackPanel>
-                </materialDesign:PopupBox>
+                        </StackPanel>
 
-                <!--Вкладки-->
-                <RadioButton
-                    Style="{StaticResource MaterialDesignTabRadioButton}"
-                    IsChecked="{Binding IsTabVacanciesActive}"
-                    Content="Вакансии"/>
-                <RadioButton
-                    Style="{StaticResource MaterialDesignTabRadioButton}"
-                    IsChecked="{Binding IsTabResponsesActive}"
-                    Content="Отклики"/>
-                <RadioButton
-                    Style="{StaticResource MaterialDesignTabRadioButton}"
-                    IsChecked="{Binding IsTabEmployeesActive}"
-                    Content="Сотрудники"/>
-                <RadioButton
-                    Style="{StaticResource MaterialDesignTabRadioButton}"
-                    IsChecked="{Binding IsTabPeopleActive}"
-                    Content="Люди"/>
-            </StackPanel>
-        </materialDesign:ColorZone>
+                        <!--Выпадающее меню-->
+                        <materialDesign:PopupBox DockPanel.Dock="Right">
+                            <StackPanel>
+                                <Button Content="Выход" Command="{Binding CmdLogout}"/>
+                            </StackPanel>
+                        </materialDesign:PopupBox>
+                    </DockPanel>
+                </materialDesign:ColorZone>
 
-        
-        <!--Контент вкладки-->
-        
-        <!--DataContext устанавливается на ViewModel выбранной страницы, чтобы она сразу унаследовала его
+
+                <!--Контент вкладки-->
+
+                <!--DataContext устанавливается на ViewModel выбранной страницы, чтобы она сразу унаследовала его
         как свой DataContext-->
-        <ContentControl 
+                <ContentControl 
             Grid.Row="1"
             DataContext="{Binding ActiveTabViewModel}"
             Content="{Binding DataContext.ActiveTabViewModel, 
             RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, 
             Converter={convert:TabViewModelToViewConverter}}">
-            
-        </ContentControl>
-        
+
+                </ContentControl>
+            </Grid>
+        </materialDesign:DrawerHost>
     </Grid>
 </UserControl>
