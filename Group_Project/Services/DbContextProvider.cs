@@ -20,6 +20,11 @@ namespace Group_Project.Services
             return dbContext;
         }
 
+        public void Refresh()
+        {
+            dbContext = new JobSeekerDbContext(connectionString);
+        }
+
         public bool TrySaveChanges()
         {
             try

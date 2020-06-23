@@ -24,7 +24,7 @@
         <!--название предмета-->
         <StackPanel Grid.Row="0">
             <TextBlock Text="Название предмета"/>
-            <TextBox Margin="0 3 0 10"/>
+            <TextBox Margin="0 3 0 10" Text="{Binding InternalDiscipline.Title}"/>
         </StackPanel>
 
         <!--выбор технологии-->
@@ -37,11 +37,15 @@
                 </Grid.ColumnDefinitions>
                 <ComboBox 
                     Margin="0 2 10 0" 
-                    IsEditable="True"/>
+                    IsEditable="True"
+                    ItemsSource="{Binding AllTechnologies}"
+                    SelectedItem="{Binding SelectedTech}"
+                    DisplayMemberPath="Title"/>
                 <Button 
                     Grid.Column="1" 
                     materialDesign:ButtonAssist.CornerRadius="8" 
-                    Padding="8">
+                    Padding="8"
+                    Command="{Binding CmdAddTech}">
                     <materialDesign:PackIcon Kind="Plus"/>
                 </Button>
 
@@ -56,7 +60,7 @@
             <!--ScrollViewer нужен чтобы обеспечить вертикальный скроллбар (неожиданно)-->
             <ScrollViewer 
                 HorizontalScrollBarVisibility="Disabled">
-                <ItemsControl>
+                <ItemsControl ItemsSource="{Binding InternDisciplineTechnologies}">
                     <!--контейнер, размещающий элементы списка-->
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -69,7 +73,9 @@
                             <materialDesign:Chip
                                 Margin="3, 5"
                                 IsDeletable="True"
-                                Content="BINDING PLACEHOLDER"/>
+                                Content="{Binding Title}"
+                                DeleteCommand="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.CmdRemoveTech}"
+                                DeleteCommandParameter="{Binding}"/>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -85,10 +91,14 @@
 
             <Button 
                 Grid.Column="0"
-                Content="OK"/>
+                Content="OK"
+                Click="BtnSave_Click"
+                Command="{Binding CmdSaveEntityChanges}"/>
             <Button 
                 Grid.Column="2"
-                Content="Отмена"/>
+                Content="Отмена"
+                Click="BtnCancel_Click"
+                Command="{Binding CmdDismissEntityChanges}"/>
         </Grid>
 
     </Grid>

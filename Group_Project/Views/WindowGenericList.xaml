@@ -5,38 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Group_Project.Views"
         mc:Ignorable="d"
-        Title="%bind to view model%" Height="450" Width="490.462">
+        Title="{Binding WindowTitle}" 
+        Height="400" MinHeight="250"
+        Width="400" MinWidth="300">
 
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
 
-        <DockPanel>
-            <Label FontSize="18" Content="%bind to view model%" Margin="0,5,5,2"/>
-        </DockPanel>
-        <DockPanel Grid.Row="1">
-            <ListView ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="DarkGray" BorderThickness="1">
-                <ListView.View>
-                    <GridView>
-                        <!--<GridViewColumn DisplayMemberBinding="{Binding Path=ModelName}"/>-->
+        <GroupBox Grid.Column="0" Header="{Binding ListTitle, FallbackValue=List content}">
+            <ListBox 
+                Margin="-5"
+                ItemsSource="{Binding ListItems}"
+                SelectedItem="{Binding SelectedListItem}"
+                DisplayMemberPath="Title"
+                ScrollViewer.VerticalScrollBarVisibility="Visible">
+            </ListBox>
+        </GroupBox>
 
-                    </GridView>
-                </ListView.View>
-
-            </ListView>
-        </DockPanel>
-
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <Button Margin="10" Content="Добавить" ToolTip="Добавить новую должность" VerticalAlignment="Center" Grid.Row="1"/>
-            <Button Margin="10" Content="Изменить" Grid.Row="2"/>
-            <Button Margin="10" Content="Удалить" Grid.Row="3"/>
+        <StackPanel Grid.Column="1" Margin="0 30 0 0">
+            <Button Margin="10" Content="Добавить" Command="{Binding CmdAddListItem}"/>
+            <Button Margin="10" Content="Изменить" Command="{Binding CmdEditListItem}"/>
+            <Button Margin="10" Content="Удалить" Command="{Binding CmdDeleteListItem}"/>
         </StackPanel>
-        
+
     </Grid>
 </Window>
