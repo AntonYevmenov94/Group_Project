@@ -68,19 +68,7 @@ namespace Group_Project.ViewModels
                 if (selectedVacancy != value)
                 {
                     selectedVacancy = value;
-                    VacancyTechnologies = new ObservableCollection<Technology>();
-                    Disciplines = new ObservableCollection<Discipline>(selectedVacancy.Disciplines);
-                    foreach (Discipline discipline in SelectedVacancy.Disciplines)
-                    {
-                        if (discipline.Vacancies.Contains(SelectedVacancy))
-                        {
-                            foreach (Technology technology in discipline.Technologies)
-                            {
-                                if (!VacancyTechnologies.Contains(technology))
-                                    VacancyTechnologies.Add(technology);
-                            }
-                        }
-                    }
+                    VacTechRebuild();
                 }
             }
         }
@@ -174,6 +162,7 @@ namespace Group_Project.ViewModels
                     {
                         Disciplines.Add(SelectedDiscipline);
                         selectedVacancy.Disciplines.Add(SelectedDiscipline);
+                        VacTechRebuild();
                     }
 
                 }));
@@ -217,6 +206,7 @@ namespace Group_Project.ViewModels
                     Discipline discipline = obj as Discipline;
                     Disciplines.Remove(discipline);
                     db.Vacancies.First(v => v.Id == selectedVacancy.Id).Disciplines.Remove(discipline);
+                    VacTechRebuild();
                 }));
             }
         }
@@ -274,5 +264,22 @@ namespace Group_Project.ViewModels
         }
 
         #endregion
+
+        private void VacTechRebuild()
+        {
+            VacancyTechnologies = new ObservableCollection<Technology>();
+            Disciplines = new ObservableCollection<Discipline>(selectedVacancy.Disciplines);
+            foreach (Discipline discipline in SelectedVacancy.Disciplines)
+            {
+                if (discipline.Vacancies.Contains(SelectedVacancy))
+                {
+                    foreach (Technology technology in discipline.Technologies)
+                    {
+                        if (!VacancyTechnologies.Contains(technology))
+                            VacancyTechnologies.Add(technology);
+                    }
+                }
+            }
+        }
     }
 }
