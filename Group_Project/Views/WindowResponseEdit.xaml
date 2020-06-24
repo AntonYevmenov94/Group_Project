@@ -9,13 +9,11 @@
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
         SizeToContent="Width"
+        MinHeight="800" MinWidth="700"
         Title="ResponseWindow" Height="800" Width="650">
     <ScrollViewer 
         HorizontalScrollBarVisibility="Hidden" 
-        VerticalScrollBarVisibility="Auto">
-        <ScrollViewer.Background>
-            <SolidColorBrush Color="Black" Opacity="0.05"/>
-        </ScrollViewer.Background>
+        VerticalScrollBarVisibility="Hidden">
         <local:ResponseView/>
     </ScrollViewer>
 </Window>

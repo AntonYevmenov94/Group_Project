@@ -41,16 +41,20 @@ namespace Group_Project.ViewModels
             db.Sex.Load();
             db.Technologies.Load();
             db.Persons.Load();
+            db.Disciplines.Load();
             Vacancies = new ObservableCollection<Vacancy>();
-            VacancyTechnologies = new ObservableCollection<Technology>();
             Genders = new ObservableCollection<Sex>();
             Persons = new ObservableCollection<Person>();
+            VacancyTechnologies = new ObservableCollection<Technology>();
+            AllDisciplines = new ObservableCollection<Discipline>();
+            AllDisciplines = db.Disciplines.Local;
             Vacancies = db.Vacancies.Local;
-            VacancyTechnologies = db.Technologies.Local;
             Genders = db.Sex.Local;
             Persons = db.Persons.Local;
+            Disciplines = db.Disciplines.Local;
             SelectedPerson = Persons[0];
-            SelectedVacancy = Vacancies[0];            
+            SelectedVacancy = Vacancies[0];
+            SelectedDiscipline = Disciplines[0];
         }
         #endregion
         JobSeekerDbContext db;
@@ -64,8 +68,9 @@ namespace Group_Project.ViewModels
                 if (selectedVacancy != value)
                 {
                     selectedVacancy = value;
-                    disciplines = SelectedVacancy.Disciplines.ToList();
-                    foreach (Discipline discipline in disciplines)
+                    VacancyTechnologies = new ObservableCollection<Technology>();
+                    Disciplines = new ObservableCollection<Discipline>(selectedVacancy.Disciplines);
+                    foreach (Discipline discipline in SelectedVacancy.Disciplines)
                     {
                         if (discipline.Vacancies.Contains(SelectedVacancy))
                         {
@@ -76,23 +81,38 @@ namespace Group_Project.ViewModels
                             }
                         }
                     }
-                }                   
+                }
             }
         }
-        List<Discipline> disciplines = new List<Discipline>();
-
-        public Person SelectedPerson { get; set; }
+        private Person selectedPerson;
+        public Person SelectedPerson
+        {
+            get { return selectedPerson; }
+            set
+            {
+                if (selectedPerson != value) 
+                {
+                    selectedPerson = value;
+                    PersonEmails = new ObservableCollection<Email>(selectedPerson.Emails);
+                    PersonSocialMediaLinks = new ObservableCollection<SocialMediaLink>(selectedPerson.SocialMediaLinks);
+                    PersonTechnologies = new ObservableCollection<Technology>(selectedPerson.Technologies);
+                }
+            }
+        }
         public string NewAddress { get; set; }
         public string NewSocialMediaLink { get; set; }
         public Technology SelectedTechnology { get; set; }
+        public Discipline SelectedDiscipline { get; set; }
 
         public ObservableCollection<Person> Persons { get; set; }
         public ObservableCollection<Vacancy> Vacancies { get; set; }
-        public ObservableCollection<Technology> VacancyTechnologies { get; set; }
         public ObservableCollection<Sex> Genders { get; set; }
+        public ObservableCollection<Discipline> Disciplines { get; set; }
         public ObservableCollection<Email> PersonEmails { get; set; }
         public ObservableCollection<SocialMediaLink> PersonSocialMediaLinks { get; set; }
         public ObservableCollection<Technology> PersonTechnologies { get; set; }
+        public ObservableCollection<Technology> VacancyTechnologies { get; set; }
+        public ObservableCollection<Discipline> AllDisciplines { get; set; }
 
         #region Commands
         private RelayCommand _addEmailCommand;
@@ -102,7 +122,9 @@ namespace Group_Project.ViewModels
             {
                 return _addEmailCommand ?? (_addEmailCommand = new RelayCommand(obj =>
                 {
-                    db.Emails.Add(new Email() { Address = NewAddress, PersonId = SelectedPerson.Id });
+                    Email email = new Email() { Address = NewAddress, PersonId = SelectedPerson.Id };
+                    db.Emails.Add(email);
+                    PersonEmails.Add(email);
                     DialogHost.CloseDialogCommand.Execute(null, null);
                 }));
             }
@@ -115,7 +137,9 @@ namespace Group_Project.ViewModels
             {
                 return _addSocialMediaLinkCommand ?? (_addSocialMediaLinkCommand = new RelayCommand(obj =>
                 {
-                    db.SocialMediaLinks.Add(new SocialMediaLink() { Link = NewSocialMediaLink, PersonId = SelectedPerson.Id });
+                    SocialMediaLink link = new SocialMediaLink() { Link = NewSocialMediaLink, PersonId = SelectedPerson.Id };
+                    db.SocialMediaLinks.Add(link);
+                    PersonSocialMediaLinks.Add(link);
                     DialogHost.CloseDialogCommand.Execute(null, null);
                 }));
             }
@@ -128,8 +152,30 @@ namespace Group_Project.ViewModels
             {
                 return _addTechnologyCommand ?? (_addTechnologyCommand = new RelayCommand(obj =>
                 {
-                    SelectedPerson.Technologies.Add(SelectedTechnology);
-                    DialogHost.CloseDialogCommand.Execute(null, null);
+                    if(SelectedTechnology!=null)
+                    {
+                        selectedPerson.Technologies.Add(SelectedTechnology);
+                        PersonTechnologies.Add(SelectedTechnology);
+                        DialogHost.CloseDialogCommand.Execute(null, null);
+                    }
+                    
+                }));
+            }
+        }
+
+        private RelayCommand _addDisciplineCommand;
+        public RelayCommand AddDisciplineCommand
+        {
+            get
+            {
+                return _addDisciplineCommand ?? (_addDisciplineCommand = new RelayCommand(obj =>
+                {
+                    if (SelectedDiscipline != null)
+                    {
+                        Disciplines.Add(SelectedDiscipline);
+                        selectedVacancy.Disciplines.Add(SelectedDiscipline);
+                    }
+
                 }));
             }
         }
@@ -143,6 +189,62 @@ namespace Group_Project.ViewModels
                 {
                     string link = obj as string;
                     Process.Start(link);
+                }));
+            }
+        }
+
+        private RelayCommand _deleteLinkCommand;
+        public RelayCommand DeleteLinkCommand
+        {
+            get
+            {
+                return _deleteLinkCommand ?? (_deleteLinkCommand = new RelayCommand(obj =>
+                {
+                    SocialMediaLink link = obj as SocialMediaLink;
+                    PersonSocialMediaLinks.Remove(link);
+                    db.SocialMediaLinks.Remove(link);
+                }));
+            }
+        }
+
+        private RelayCommand _deleteDisciplineCommand;
+        public RelayCommand DeleteDisciplineCommand
+        {
+            get
+            {
+                return _deleteDisciplineCommand ?? (_deleteDisciplineCommand = new RelayCommand(obj =>
+                {
+                    Discipline discipline = obj as Discipline;
+                    Disciplines.Remove(discipline);
+                    db.Vacancies.First(v => v.Id == selectedVacancy.Id).Disciplines.Remove(discipline);
+                }));
+            }
+        }
+
+        private RelayCommand _deleteEmailCommand;
+        public RelayCommand DeleteEmailCommand
+        {
+            get
+            {
+                return _deleteEmailCommand ?? (_deleteEmailCommand = new RelayCommand(obj =>
+                {
+                    Email email = obj as Email;
+                    PersonEmails.Remove(email);
+                    db.Emails.Remove(email);
+                }));
+            }
+        }
+
+        private RelayCommand _deleteTechnologyCommand;
+        public RelayCommand DeleteTechnologyCommand
+        {
+            get
+            {
+                return _deleteTechnologyCommand ?? (_deleteTechnologyCommand = new RelayCommand(obj =>
+                {
+                    Technology technology = obj as Technology;
+                    PersonTechnologies.Remove(technology);
+                    selectedPerson.Technologies.Remove(technology);
                 }));
             }
         }
